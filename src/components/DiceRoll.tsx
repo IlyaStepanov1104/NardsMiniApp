@@ -1,0 +1,53 @@
+'use client'
+
+import {motion} from 'framer-motion'
+import {useEffect, useState} from 'react'
+import DiceFace from './DiceFace'
+
+type DiceRollProps = {
+    dice: [number, number]
+    size?: number
+    duration?: number
+}
+
+const getRandomDice = () => Math.floor(Math.random() * 6) + 1 as 1 | 2 | 3 | 4 | 5 | 6
+
+export default function DiceRoll({dice, size = 64, duration = 0.2}: DiceRollProps) {
+    const [rolling, setRolling] = useState(true)
+    const [currentDice, setCurrentDice] = useState<[number, number]>([1, 1])
+
+    useEffect(() => {
+        if (dice.includes(0)) {
+            setCurrentDice(dice)
+            setRolling(false)
+            return;
+        }
+        let frame = 0
+        const interval = setInterval(() => {
+            setCurrentDice([getRandomDice(), getRandomDice()])
+            frame++
+            if (frame > duration * 10) {
+                clearInterval(interval)
+                setCurrentDice(dice)
+                setRolling(false)
+            }
+        }, 100)
+
+        return () => clearInterval(interval)
+    }, [dice, duration])
+
+    return (
+        <div className="flex gap-4 items-center justify-center mt-4">
+            {currentDice.map((num, idx) => (
+                <motion.div
+                    key={idx}
+                    initial={{rotate: 0}}
+                    animate={{rotate: rolling ? 360 : 0}}
+                    transition={{duration: 0.5}}
+                >
+                    <DiceFace value={num} size={size}/>
+                </motion.div>
+            ))}
+        </div>
+    )
+}
