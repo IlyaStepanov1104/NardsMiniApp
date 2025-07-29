@@ -55,3 +55,8 @@ export const generateDefaultCheckersData = () => {
     }
     return checkers;
 }
+
+export const sliceString = (str: string): string => {
+    if (str.length < 12) return str;
+    return `${str.slice(0, 8)}...${str.slice(str.length - 2)}`;
+}

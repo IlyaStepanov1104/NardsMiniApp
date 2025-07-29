@@ -37,7 +37,7 @@ export default function DiceRoll({dice, size = 64, duration = 0.2}: DiceRollProp
     }, [dice, duration])
 
     return (
-        <div className="flex gap-4 items-center justify-center mt-4">
+        <div className="flex gap-4 items-center justify-center mt-4 mb-4">
             {currentDice.map((num, idx) => (
                 <motion.div
                     key={idx}

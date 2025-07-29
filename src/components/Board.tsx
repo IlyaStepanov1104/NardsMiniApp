@@ -1,9 +1,17 @@
 "use client";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {Checker} from "@/components/Checker";
 import DiceRoll from "@/components/DiceRoll";
-import {calculateCordY, generateDefaultCheckersData, getDirection, getRealPoint, togglePlayer} from "@/lib/helpers";
+import {
+    calculateCordY,
+    generateDefaultCheckersData,
+    getDirection,
+    getRealPoint,
+    sliceString,
+    togglePlayer
+} from "@/lib/helpers";
 import {BAR_COORDS, POINT_COORDS} from "@/lib/boardData";
+import html2canvas from "html2canvas";
 
 type Player = "first" | "second";
 
@@ -52,8 +60,23 @@ type CheckerData = {
 
 export default function Board() {
     const [data, setData] = useState<GameData | null>(null);
-    const [currentTurn, setCurrentTurn] = useState(0);
+    const [currentTurn, setCurrentTurn] = useState(-1);
+    const [lastTurn, setLastTurn] = useState(-2);
+    const [gameDirection, setGameDirection] = useState(1);
+    console.log("%c 1 --> Line: 66||Board.tsx\n lastTurn, currentTurn, gameDirection: ", "color:#f0f;", lastTurn, currentTurn, gameDirection);
     const [checkers, setCheckers] = useState<CheckerData[]>(generateDefaultCheckersData());
+    const screenBlockRef = useRef<HTMLDivElement | null>(null);
+    const handleScreenshot = async () => {
+        if (!screenBlockRef.current) return;
+        const canvas = await html2canvas(screenBlockRef.current, {useCORS: true});
+        const dataUrl = canvas.toDataURL('image/png');
+
+        // Создаем ссылку и скачиваем изображение
+        const link = document.createElement('a');
+        link.href = dataUrl;
+        link.download = 'screenshot.png';
+        link.click();
+    };
 
     useEffect(() => {
         fetch("/game.json")
@@ -61,62 +84,95 @@ export default function Board() {
             .then(setData);
     }, []);
 
+
     useEffect(() => {
         if (!data) return;
         const turn = data.turns[currentTurn];
         if (!turn) return;
 
-        checkers.map(checker => checker.check = false)
+        // Создаем копию массива с обновленными значениями
+        let newCheckers = checkers.map(checker => ({
+            ...checker,
+            check: false,
+            delay: 0
+        }));
 
         let i = 0;
-
         const player = turn.turn;
-        for (let {from, to, captured} of turn.moves) {
-            from = getRealPoint(from, player);
-            to = getRealPoint(to, player);
+
+        const moves = currentTurn > lastTurn ? turn.moves : turn.moves.reverse();
+
+        for (let {from, to, captured} of moves) {
+            const otherPlayer = togglePlayer(player);
+
+            if (currentTurn > lastTurn) {
+                from = getRealPoint(from, player);
+                to = getRealPoint(to, player);
+            } else {
+                const acc = from;
+                from = getRealPoint(to, player);
+                to = getRealPoint(acc, player);
+            }
+
+            console.log("%c 2 --> Line: 114||Board.tsx\n {from, to, captured}: ", "color:#0f0;", {from, to, captured});
 
             if (captured) {
-                const otherPlayer = togglePlayer(player);
-                const foundChecker = checkers.find((element) => element.currentPosition === to && element.player === otherPlayer);
-                const maxIndex = checkers.reduce((acc: CheckerData | undefined, current) => {
-                    return current.index > (acc?.index ?? -Infinity) && current.currentPosition === 'Bar' && current.player === otherPlayer ? current : acc;
-                }, undefined)?.index || -1;
-                console.log("%c 1 --> Line: 84||Board.tsx\n maxIndex: ","color:#f0f;", maxIndex);
+                if (currentTurn > lastTurn) {
+                    const foundChecker = newCheckers.find(el => el.currentPosition === to && el.player === otherPlayer);
+                    const found = newCheckers.filter(c => c.currentPosition === 'Bar' && c.player === otherPlayer);
+                    const maxIndex = found.reduce((acc, curr) => curr.index > acc ? curr.index : acc, -1);
 
-                if (foundChecker) {
-                    foundChecker.currentPosition = 'Bar';
-                    foundChecker.x = BAR_COORDS[otherPlayer].x;
-                    foundChecker.index = maxIndex + 1;
-                    foundChecker.y = calculateCordY(BAR_COORDS[otherPlayer].y, maxIndex + 1, getDirection(to, player));
-                    foundChecker.check = true;
-                    foundChecker.delay = i * 0.1;
-                    i++;
+                    if (foundChecker) {
+                        foundChecker.currentPosition = 'Bar';
+                        foundChecker.x = BAR_COORDS[otherPlayer].x;
+                        foundChecker.index = maxIndex + 1;
+                        foundChecker.y = calculateCordY(BAR_COORDS[otherPlayer].y, maxIndex + 1, getDirection('Bar', player));
+                        foundChecker.check = true;
+                        foundChecker.delay = 1 + i * 0.1;
+                        i++;
+                    }
+                } else {
+                    const foundChecker = newCheckers.find(el => el.currentPosition === 'Bar' && el.player === otherPlayer);
+                    const found = newCheckers.filter(c => c.currentPosition === from && c.player === otherPlayer);
+                    const maxIndex = found.reduce((acc, curr) => curr.index > acc ? curr.index : acc, -1);
+
+                    if (foundChecker) {
+                        foundChecker.currentPosition = from;
+                        foundChecker.x = POINT_COORDS[from].x;
+                        foundChecker.index = maxIndex + 1;
+                        foundChecker.y = calculateCordY(POINT_COORDS[from].y, maxIndex + 1, getDirection(to, player));
+                        foundChecker.check = true;
+                        foundChecker.delay = 1 + i * 0.1;
+                        i++;
+                    }
                 }
             }
 
-            const currentChecker = checkers.reduce((acc: CheckerData | undefined, current) => {
+            const currentChecker = newCheckers.reduce((acc, curr) => {
                 if (Number(from) < 13) {
-                    return current.y < (acc?.y ?? Infinity) && current.currentPosition === from && current.player === player ? current : acc;
+                    return curr.y < (acc?.y ?? Infinity) && curr.currentPosition === from && curr.player === player ? curr : acc;
                 }
-                return current.y > (acc?.y ?? -Infinity) && current.currentPosition === from && current.player === player ? current : acc;
-            }, undefined);
+                return curr.y > (acc?.y ?? -Infinity) && curr.currentPosition === from && curr.player === player ? curr : acc;
+            }, undefined as CheckerData | undefined);
 
-            const maxIndex = checkers.reduce((acc: CheckerData | undefined, current) => {
-                return current.index > (acc?.index ?? -Infinity) && current.currentPosition === to && current.player === player ? current : acc;
-            }, undefined)?.index ?? -1;
+            const maxIndex = newCheckers.reduce((acc, curr) => {
+                return curr.index > (acc?.index ?? -Infinity) && curr.currentPosition === to && curr.player === player ? curr : acc;
+            }, undefined as CheckerData | undefined)?.index ?? -1;
 
             if (currentChecker) {
                 currentChecker.currentPosition = to;
-                currentChecker.x = POINT_COORDS[to].x;
+                currentChecker.x = to === 'Bar' ? BAR_COORDS[player].x : POINT_COORDS[to].x;
                 currentChecker.index = maxIndex + 1;
-                currentChecker.y = calculateCordY(POINT_COORDS[to].y, maxIndex + 1, getDirection(to, player));
+                currentChecker.y = calculateCordY(to === 'Bar' ? BAR_COORDS[player].y : POINT_COORDS[to].y, maxIndex + 1, getDirection(to, player));
                 currentChecker.check = true;
-                currentChecker.delay = i * 0.1;
+                currentChecker.delay = 1 + i * 0.1;
                 i++;
             }
         }
-    }, [currentTurn, data]);
 
+        // Обновляем состояние
+        setCheckers(newCheckers);
+    }, [data, currentTurn, lastTurn]);
 
     if (!data) {
         return (
@@ -127,55 +183,92 @@ export default function Board() {
     }
 
     return (
-        <div className="relative w-full max-w-[800px] aspect-[1280/1086] mx-auto mt-4 p-2">
-            <div className="header">
-                <div className="header_item justify-start">
-                    <div className="checker checker--first">
-                        {data.turns[currentTurn - 1]?.turn === 'first' && (
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 viewBox="0 0 48 48">
-                                <path fill="#43A047" d="M40.6 12.1L17 35.7 7.4 26.1 4.6 29 17 41.3 43.4 14.9z"></path>
-                            </svg>)}
+        <div className="w-full main p-2">
+            <div ref={screenBlockRef} style={{backgroundColor: '#fff8e7'}}>
+                <div className="header">
+                    <div className="header_item justify-start">
+                        <div className="checker checker--first">
+                            {data.turns[currentTurn]?.turn === 'first' && (
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 48 48">
+                                    <path fill="#43A047"
+                                          d="M40.6 12.1L17 35.7 7.4 26.1 4.6 29 17 41.3 43.4 14.9z"></path>
+                                </svg>)}
+                        </div>
+                        <div className="score">{data.first.score}</div>
                     </div>
-                    <div className="score">{data.first.score}</div>
-                </div>
-                <div className="font-sans p-2 text-lg">:</div>
-                <div className="header_item justify-end">
-                    <div className="score">{data.second.score}</div>
-                    <div className="checker checker--second">
-                        {data.turns[currentTurn - 1]?.turn === 'second' && (
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
-                                 viewBox="0 0 48 48">
-                                <path fill="#43A047" d="M40.6 12.1L17 35.7 7.4 26.1 4.6 29 17 41.3 43.4 14.9z"></path>
-                            </svg>)}
+                    <div className="font-sans p-2 text-lg">:</div>
+                    <div className="header_item justify-end">
+                        <div className="score">{data.second.score}</div>
+                        <div className="checker checker--second">
+                            {data.turns[currentTurn]?.turn === 'second' && (
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                     viewBox="0 0 48 48">
+                                    <path fill="#43A047"
+                                          d="M40.6 12.1L17 35.7 7.4 26.1 4.6 29 17 41.3 43.4 14.9z"></path>
+                                </svg>)}
+                        </div>
                     </div>
+                    <div className="name text-left">{sliceString(data.first.name)}</div>
+                    <div className="text-center">Матч до {data.point_match}</div>
+                    <div className="name text-right">{sliceString(data.second.name)}</div>
                 </div>
-                <div className="name text-left">{data.first.name}</div>
-                <div className="text-center">Матч до {data.point_match}</div>
-                <div className="name text-right">{data.second.name}</div>
+
+                <div className="board">
+                    {checkers.map((checker) => (
+                        <Checker key={checker.id} {...checker} />
+                    ))}
+                </div>
+
+                <DiceRoll dice={data.turns[currentTurn]?.dice.length ? data.turns[currentTurn].dice : [0, 0]}
+                          size={48}/>
             </div>
 
-            <div className="board">
-                {checkers.map((checker) => (
-                    <Checker key={checker.id} {...checker} />
-                ))}
-            </div>
-
-            <DiceRoll dice={data.turns[currentTurn - 1]?.dice.length ? data.turns[currentTurn - 1].dice : [0, 0]}/>
-
-            <div className="header">
+            {data && <div className="bottom-buttons">
                 <button
-                    onClick={() => setCurrentTurn((t) => Math.max(t - 1, 0))}
-                    className="mt-4 rounded-md w-full bg-slate-800 py-2 px-4 text-white ml-2"
+                    onClick={() => {
+                        if (gameDirection == -1) {
+                            setLastTurn((t) => Math.max(t - 1, -1))
+                            setCurrentTurn((t) => Math.max(t - 1, -1));
+                        } else {
+                            setLastTurn(currentTurn)
+                            setGameDirection(-1)
+                        }
+                    }}
+                    className="rounded-md w-full bg-slate-800 py-2 px-4 text-white"
                 >
                     Назад
                 </button>
                 <span/>
                 <button
-                    onClick={() => setCurrentTurn((t) => Math.min(t + 1, data.turns.length - 1))}
-                    className="mt-4 rounded-md w-full bg-slate-800 py-2 px-4 text-white ml-2"
+                    onClick={() => {
+                        if (gameDirection == 1) {
+                            setLastTurn(currentTurn)
+                            setCurrentTurn((t) => Math.min(t + 1, data.turns.length - 1))
+                        } else {
+                            setLastTurn((t) => t - 1)
+                            setGameDirection(1)
+                        }
+                    }}
+                    className="rounded-md w-full bg-slate-800 py-2 px-4 text-white"
                 >
                     Вперед
+                </button>
+            </div>}
+            <div className="flex justify-center">
+                <button className="mt-2 rounded-md bg-slate-800 p-2 text-white" onClick={handleScreenshot}>
+                    <svg className="screen" viewBox="0 0 24 24" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                        <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <circle cx="12" cy="13" r="3" stroke="currentColor" strokeWidth="1.5"></circle>
+                            <path
+                                d="M2 13.3636C2 10.2994 2 8.76721 2.74902 7.6666C3.07328 7.19014 3.48995 6.78104 3.97524 6.46268C4.69555 5.99013 5.59733 5.82123 6.978 5.76086C7.63685 5.76086 8.20412 5.27068 8.33333 4.63636C8.52715 3.68489 9.37805 3 10.3663 3H13.6337C14.6219 3 15.4728 3.68489 15.6667 4.63636C15.7959 5.27068 16.3631 5.76086 17.022 5.76086C18.4027 5.82123 19.3044 5.99013 20.0248 6.46268C20.51 6.78104 20.9267 7.19014 21.251 7.6666C22 8.76721 22 10.2994 22 13.3636C22 16.4279 22 17.9601 21.251 19.0607C20.9267 19.5371 20.51 19.9462 20.0248 20.2646C18.9038 21 17.3433 21 14.2222 21H9.77778C6.65675 21 5.09624 21 3.97524 20.2646C3.48995 19.9462 3.07328 19.5371 2.74902 19.0607C2.53746 18.7498 2.38566 18.4045 2.27673 18"
+                                stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path>
+                            <path d="M19 10H18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path>
+                        </g>
+                    </svg>
                 </button>
             </div>
         </div>

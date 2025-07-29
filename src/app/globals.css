@@ -2,7 +2,6 @@
 
 html, body {
     background-color: #fff8e7;
-    overflow: hidden;
     height: 100vh;
 }
 
@@ -88,11 +87,6 @@ html, body {
     word-wrap: break-word;
     width: 100%;
     padding-inline: 16px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2; /* максимум 2 строки */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .board {
@@ -101,4 +95,29 @@ html, body {
     background-size: cover;
     aspect-ratio: 1156 / 956;
     position: relative;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+.bottom-buttons {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    gap: 8px;
+    max-height: 100px;
+}
+
+.bottom-buttons button {
+    height: 100%;
+}
+
+.screen {
+    width: 6vh;
+    height: 6vh;
 }

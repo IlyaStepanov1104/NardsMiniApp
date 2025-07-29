@@ -46,8 +46,8 @@ export const BAR_COORDS: Record<"first" | "second", { x: number; y: number }> = 
 
 // Направления отрисовки шашек
 export const DIRECTION: Record<"first" | "second", 1 | -1> = {
-    first: -1,
-    second: 1
+    first: 1,
+    second: -1
 };
 
 export const DEFAULT_CHECKERS = {

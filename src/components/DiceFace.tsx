@@ -32,7 +32,7 @@ export default function DiceFace({ value, size = 64 }: DiceFaceProps) {
             width={size}
             height={size}
             viewBox={`0 0 ${size} ${size}`}
-            style={{ borderRadius: 8, background: 'white', boxShadow: '0 0 4px #aaa' }}
+            style={{ borderRadius: 8, background: 'white', boxShadow: '0 0 4px #aaa', border: '1px solid gray' }}
         >
             {positions[value]}
         </svg>
