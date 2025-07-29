@@ -62,7 +62,6 @@ export default function Board() {
     const [currentTurn, setCurrentTurn] = useState(-1);
     const [lastTurn, setLastTurn] = useState(-2);
     const [gameDirection, setGameDirection] = useState(1);
-    console.log("%c 1 --> Line: 66||Board.tsx\n lastTurn, currentTurn, gameDirection: ", "color:#f0f;", lastTurn, currentTurn, gameDirection);
     const [checkers, setCheckers] = useState<CheckerData[]>(generateDefaultCheckersData());
     const screenBlockRef = useRef<HTMLDivElement | null>(null);
     const handleScreenshot = async () => {
@@ -125,8 +124,6 @@ export default function Board() {
                 from = getRealPoint(to, player);
                 to = getRealPoint(acc, player);
             }
-
-            console.log("%c 2 --> Line: 114||Board.tsx\n {from, to, captured}: ", "color:#0f0;", {from, to, captured});
 
             if (captured) {
                 if (currentTurn > lastTurn) {
