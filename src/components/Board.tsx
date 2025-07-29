@@ -11,11 +11,10 @@ import {
     togglePlayer
 } from "@/lib/helpers";
 import {BAR_COORDS, POINT_COORDS} from "@/lib/boardData";
-import html2canvas from "html2canvas";
 
 type Player = "first" | "second";
 
-interface PlayerInfo {
+export interface PlayerInfo {
     name: string;
     score: number;
 }
@@ -33,7 +32,7 @@ interface Move {
     "captured": boolean
 }
 
-interface Turn {
+export interface Turn {
     "turn": Player,
     "dice": [
         number,
@@ -44,7 +43,7 @@ interface Turn {
     "moves": Move[]
 }
 
-type CheckerData = {
+export type CheckerData = {
     id: string;
     player: Player;
     index: number;
@@ -68,13 +67,26 @@ export default function Board() {
     const screenBlockRef = useRef<HTMLDivElement | null>(null);
     const handleScreenshot = async () => {
         if (!screenBlockRef.current) return;
-        const canvas = await html2canvas(screenBlockRef.current, {useCORS: true});
-        const dataUrl = canvas.toDataURL('image/png');
+        const result = await fetch('/api/screenshot', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                state: {
+                    checkers,
+                    "first": data?.first,
+                    "second": data?.second,
+                    "point_match": data?.point_match,
+                    currentTurn: data?.turns[currentTurn],
+                },
+            }),
+        });
 
-        // Создаем ссылку и скачиваем изображение
+        const blob = await result.blob();
+        const url = URL.createObjectURL(blob);
+
         const link = document.createElement('a');
-        link.href = dataUrl;
-        link.download = 'screenshot.png';
+        link.href = url;
+        link.download = 'board.png';
         link.click();
     };
 
@@ -220,8 +232,33 @@ export default function Board() {
                     ))}
                 </div>
 
-                <DiceRoll dice={data.turns[currentTurn]?.dice.length ? data.turns[currentTurn].dice : [0, 0]}
-                          size={48}/>
+                <div className="turns">
+                    <div
+                        className={`turns-info p-2 ${data.turns[currentTurn]?.turn === 'first' && 'turns-info--active'}`}>
+                        {data.turns[currentTurn]?.turn === 'first' &&
+                            data.turns[currentTurn].moves.map(({
+                                                                   from,
+                                                                   to,
+                                                                   captured
+                                                               }, id) => (
+                                <span key={id}>{`${from}/${to}${captured ? '*' : ''}`}</span>
+                            ))}
+                    </div>
+                    <DiceRoll dice={data.turns[currentTurn]?.dice.length ? data.turns[currentTurn].dice : [0, 0]}
+                              size={48}/>
+                    <div
+                        className={`turns-info p-2 ${data.turns[currentTurn]?.turn === 'second' && 'turns-info--active'}`}>
+                        {data.turns[currentTurn]?.turn === 'second' &&
+                            data.turns[currentTurn].moves.map(({
+                                                                   from,
+                                                                   to,
+                                                                   captured
+                                                               }, id) => (
+                                <span key={id}>{`${from}/${to}${captured ? '*' : ''}`}</span>
+                            ))}
+                    </div>
+                </div>
+
             </div>
 
             {data && <div className="bottom-buttons">
@@ -235,10 +272,9 @@ export default function Board() {
                             setGameDirection(-1)
                         }
                     }}
-                    className="rounded-md w-full bg-slate-800 py-2 px-4 text-white"
-                >
-                    Назад
-                </button>
+                    className="rounded-md w-full button"
+                    data-orientation="left"
+                />
                 <span/>
                 <button
                     onClick={() => {
@@ -250,10 +286,9 @@ export default function Board() {
                             setGameDirection(1)
                         }
                     }}
-                    className="rounded-md w-full bg-slate-800 py-2 px-4 text-white"
-                >
-                    Вперед
-                </button>
+                    className="rounded-md w-full button"
+                    data-orientation="right"
+                />
             </div>}
             <div className="flex justify-center">
                 <button className="mt-2 rounded-md bg-slate-800 p-2 text-white" onClick={handleScreenshot}>

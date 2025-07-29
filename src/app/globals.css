@@ -121,3 +121,38 @@ html, body {
     width: 6vh;
     height: 6vh;
 }
+
+.turns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.turns-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out 1s;
+    opacity: 0;
+}
+
+.turns-info--active {
+    opacity: 1;
+}
+
+.button {
+    aspect-ratio: 1.0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: auto;
+}
+
+.button[data-orientation="right"] {
+    background-image: url('/right.png');
+}
+
+.button[data-orientation="left"] {
+    background-image: url('/left.png');
+}

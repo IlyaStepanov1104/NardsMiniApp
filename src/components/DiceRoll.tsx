@@ -7,17 +7,18 @@ import DiceFace from './DiceFace'
 type DiceRollProps = {
     dice: [number, number]
     size?: number
-    duration?: number
+    duration?: number;
+    notAnimated?: true;
 }
 
 const getRandomDice = () => Math.floor(Math.random() * 6) + 1 as 1 | 2 | 3 | 4 | 5 | 6
 
-export default function DiceRoll({dice, size = 64, duration = 0.2}: DiceRollProps) {
+export default function DiceRoll({dice, size = 64, duration = 0.2, notAnimated}: DiceRollProps) {
     const [rolling, setRolling] = useState(true)
     const [currentDice, setCurrentDice] = useState<[number, number]>([1, 1])
 
     useEffect(() => {
-        if (dice.includes(0)) {
+        if (dice.includes(0) || notAnimated) {
             setCurrentDice(dice)
             setRolling(false)
             return;
