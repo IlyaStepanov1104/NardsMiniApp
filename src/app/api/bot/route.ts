@@ -11,6 +11,8 @@ import {TelegramBotAPI} from "@/lib/telegram";
 export async function POST(req: NextRequest) {
     const update = await req.json()
 
+    return NextResponse.json(process.env);
+
 
     const client = new TelegramBotAPI(process.env.BOT_TOKEN!)
     return NextResponse.json(client);
