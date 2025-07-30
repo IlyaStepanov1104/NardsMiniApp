@@ -3,7 +3,6 @@ import {FC, Suspense, useEffect, useState} from "react";
 import {useSearchParams} from "next/navigation";
 import {GameData} from "@/components/types";
 import Board from "@/components/Board";
-import InnerScreenshotClient from "@/components/ScreenshotClient";
 
 export const Games: FC = () => {
     const params = useSearchParams();

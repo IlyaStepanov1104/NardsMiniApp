@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
         );
 
         // Парсим
-        const games = await parseFile(text, dirName);
+        // const games = await parseFile(text, dirName);
 
         const buttons = [[{
             text: `Открыть игру 📲`,
