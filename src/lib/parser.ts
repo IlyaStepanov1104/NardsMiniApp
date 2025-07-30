@@ -194,16 +194,31 @@ export async function parseFile(data: string, dir: string): Promise<number> {
     const pointsMatch = extractPointMatch(splitFile[0]);
     const gamesRaw = splitFile.slice(1);
 
-    const allGames: GameData[] = [];
-
-    for (let i = 0; i < gamesRaw.length; i++) {
-        const game = await parseGame(gamesRaw[i], pointsMatch);
-        allGames.push(game);
-    }
-
     const dirPath = path.resolve('./public/json', dir);
     await fs.mkdir(dirPath, { recursive: true });
-    await fs.writeFile(path.join(dirPath, 'games.json'), JSON.stringify(allGames, null, 2), 'utf-8');
+    const filePath = path.join(dirPath, 'games.json');
 
-    return allGames.length;
+    // Открываем поток записи
+    const fileHandle = await fs.open(filePath, 'w');
+    await fileHandle.write('[');
+
+    let first = true;
+    let count = 0;
+
+    for (const rawGame of gamesRaw) {
+        const game = await parseGame(rawGame, pointsMatch);
+        const json = JSON.stringify(game, null, 2);
+
+        if (!first) {
+            await fileHandle.write(',\n');
+        }
+        await fileHandle.write(json);
+        first = false;
+        count++;
+    }
+
+    await fileHandle.write(']');
+    await fileHandle.close();
+
+    return count;
 }
