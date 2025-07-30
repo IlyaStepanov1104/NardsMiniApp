@@ -11,11 +11,7 @@ import {TelegramBotAPI} from "@/lib/telegram";
 export async function POST(req: NextRequest) {
     const update = await req.json()
 
-    return NextResponse.json(process.env);
-
-
-    const client = new TelegramBotAPI(process.env.BOT_TOKEN!)
-    return NextResponse.json(client);
+    const client = new TelegramBotAPI("8165148569:AAE1TuZjz7dGhR8arVLxL4rJ9bUwhuecOMo")
 
     if (update.message?.text === '/start') {
         await client.sendMessage(
@@ -63,7 +59,7 @@ export async function POST(req: NextRequest) {
 
         const buttons = games.map((game: number) => [{
             text: `Открыть игру ${game} 📲`,
-            web_app: {url: process.env.WEB_APP_URL!},
+            web_app: {url: 'https://nards-mini-app-ohft.vercel.app/'!},
         }])
 
         await client.sendMessage({
