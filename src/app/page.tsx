@@ -1,9 +1,9 @@
-import {Games} from "@/components/Games";
+import {GamesClient} from "@/components/Games";
 
 export default function Home() {
     return (
         <main className="min-h-screen">
-            <Games/>
+            <GamesClient/>
         </main>
     );
 }
