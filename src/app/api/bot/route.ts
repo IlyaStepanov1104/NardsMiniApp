@@ -11,9 +11,9 @@ import {TelegramBotAPI} from "@/lib/telegram";
 export async function POST(req: NextRequest) {
     const update = await req.json()
 
-    return NextResponse.json(update);
 
     const client = new TelegramBotAPI(process.env.BOT_TOKEN!)
+    return NextResponse.json(client);
 
     if (update.message?.text === '/start') {
         await client.sendMessage(
