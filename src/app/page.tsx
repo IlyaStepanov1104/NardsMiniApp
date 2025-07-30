@@ -1,11 +1,9 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import Board from "@/components/Board";
+import {Games} from "@/components/Games";
 
 export default function Home() {
     return (
         <main className="min-h-screen">
-            <Board/>
+            <Games/>
         </main>
     );
 }

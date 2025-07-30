@@ -9,6 +9,13 @@ type SendMessageParams = {
     reply_markup?: object;
 };
 
+interface TFile {
+    file_id: string;
+    file_unique_id: string;
+    file_size: number;
+    file_path: string;
+}
+
 export class TelegramBotAPI {
     private readonly baseUrl: string;
 
@@ -52,27 +59,32 @@ export class TelegramBotAPI {
     }
 
     // Получить путь к файлу
-    async getFile(file_id: string) {
-        return await this.apiRequest('getFile', { file_id });
+    async getFile(file_id: string): Promise<TFile> {
+        return await this.apiRequest('getFile', {file_id});
     }
 
     // Скачать файл по file_path
-    async downloadFile(file_path: string, dest: string) {
+    async downloadFile(file_path: string) {
         const fileUrl = `https://api.telegram.org/file/bot${this.token}/${file_path}`;
         const res = await fetch(fileUrl);
 
         if (!res.ok) {
-            throw new Error(`Failed to download file: ${res.statusText}`);
+            throw new Error(`Ошибка, не получилось скачать файл: ${res.statusText}`);
         }
 
-        const buffer = await res.buffer();
-        await fs.mkdir(path.dirname(dest), { recursive: true });
-        await fs.writeFile(dest, buffer);
+        const contentType = res.headers.get('content-type') || '';
+
+        if (!contentType.startsWith('application')
+            && !contentType.startsWith('text')) {
+            throw new Error(`Ошибка! Тип файла не соответствует требованиям!`);
+        }
+
+        return await res.text();
     }
 
     // Установить вебхук
     async setWebhook(url: string) {
-        return await this.apiRequest('setWebhook', { url });
+        return await this.apiRequest('setWebhook', {url});
     }
 
     // Пример: ответить на inline callback query

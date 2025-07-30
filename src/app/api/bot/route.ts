@@ -10,6 +10,8 @@ import {TelegramBotAPI} from "@/lib/telegram";
 
 export async function POST(req: NextRequest) {
     const update = await req.json()
+    const chat_id = update.message.chat.id;
+    const username = update.message.from_user.username;
 
     const client = new TelegramBotAPI("8165148569:AAE1TuZjz7dGhR8arVLxL4rJ9bUwhuecOMo")
 
@@ -24,7 +26,6 @@ export async function POST(req: NextRequest) {
         const doc = update.message.document
         const dirName = randomUUID()
         const uploadDir = path.join('/tmp', dirName)
-        const chat_id = update.message.chat.id;
         mkdirSync(uploadDir, {recursive: true})
 
         const filePath = path.join(uploadDir, doc.file_name)
@@ -36,14 +37,7 @@ export async function POST(req: NextRequest) {
 
         // Скачиваем файл
         const fileUrl = await client.getFile(doc.file_id)
-        const res = await fetch(fileUrl)
-        const fileStream = createWriteStream(filePath)
-        await new Promise((resolve, reject) => {
-            // @ts-ignore
-            Readable.fromWeb(res.body!).pipe(fileStream)
-                .on('finish', () => resolve(''))
-                .on('error', reject)
-        })
+        const text = await client.downloadFile(fileUrl.file_path)
 
         await client.sendMessage({
                 chat_id,
@@ -52,15 +46,12 @@ export async function POST(req: NextRequest) {
         );
 
         // Парсим
-        const games = await parseFile(filePath, dirName);
+        const games = await parseFile(text, dirName);
 
-        // Удаляем исходный файл
-        unlinkSync(filePath)
-
-        const buttons = games.map((game: number) => [{
-            text: `Открыть игру ${game} 📲`,
-            web_app: {url: 'https://nards-mini-app-ohft.vercel.app/'!},
-        }])
+        const buttons = [[{
+            text: `Открыть игру 📲`,
+            web_app: {url: (`https://nards-mini-app-ohft.vercel.app?game=${dirName}`)!},
+        }]];
 
         await client.sendMessage({
                 chat_id,

@@ -9,9 +9,13 @@ const X_SPACE = 70;
 const START_Y_1 = 975;
 const START_Y_2 = 40;
 
+export const ZERO_COORDS = {
+    first: {x: 1065, y: START_Y_1},
+    second: {x: 30, y: START_Y_2},
+}
+
 // Центры точек (24 позиции)
 export const POINT_COORDS: Record<string, { x: number; y: number }> = {
-    "0": {x: 9999999999999, y: 9999999999999},
     "1": {x: START_X_2 + X_SPACE * 5, y: START_Y_1},
     "2": {x: START_X_2 + X_SPACE * 4, y: START_Y_1},
     "3": {x: START_X_2 + X_SPACE * 3, y: START_Y_1},
@@ -46,8 +50,8 @@ export const BAR_COORDS: Record<"first" | "second", { x: number; y: number }> = 
 
 // Направления отрисовки шашек
 export const DIRECTION: Record<"first" | "second", 1 | -1> = {
-    first: 1,
-    second: -1
+    first: -1,
+    second: 1
 };
 
 export const DEFAULT_CHECKERS = {

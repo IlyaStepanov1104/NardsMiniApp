@@ -1,22 +1,25 @@
 import {Player} from "@/components/types";
-import {BAR_COORDS, CHECKER_RADIUS, DEFAULT_CHECKERS, DIRECTION, POINT_COORDS} from "@/lib/boardData";
+import {BAR_COORDS, CHECKER_RADIUS, DEFAULT_CHECKERS, DIRECTION, POINT_COORDS, ZERO_COORDS} from "@/lib/boardData";
 
 export const togglePlayer = (player: Player): Player => {
     return player === 'first' ? 'second' : 'first';
 }
 
 export const getRealPoint = (point: string, player: Player): string => {
-    if (player === "second" && point !== "Bar") return String(25 - Number(point));
+    if (player === "second" && point !== "Bar") return String((25 - Number(point)) % 25);
     return point;
 }
 
 export const getDirection = (point: string, player: Player) => {
-    if (point === "Bar") return DIRECTION[player];
+    if (point === "Bar" || point === '0') return DIRECTION[player];
     if (Number(point) < 13) return -1;
     return 1;
 }
 
-export const calculateCordY = (y: number, index: number, direction: number): number => y + index * direction * (CHECKER_RADIUS * 1.1)
+export const calculateCordY = (y: number, index: number, direction: number, point: string): number => {
+    const space = point === 'Bar' ? 0.5 : point === '0' ? 1.03 : 1.1;
+    return y + index * direction * (CHECKER_RADIUS * space)
+}
 
 export const generateDefaultCheckersData = () => {
     const checkers = [];
@@ -28,14 +31,14 @@ export const generateDefaultCheckersData = () => {
 
         for (const [point, count] of entries) {
             const n = Number(count);
-            let realPoint = point;
-            let direction: 1 | -1 = 1;
+            let realPoint = getRealPoint(point, player);
+            console.log("%c 1 --> Line: 32||helpers.ts\n player, point, realPoint: ", "color:#f0f;", player, point, realPoint);
+            let direction = getDirection(realPoint, player);
 
-            if (player === "second" && point !== "Bar") realPoint = String((25 - Number(point)) % 25);
-            if (Number(realPoint) < 13) direction = -1;
-            if (point === "Bar") direction = DIRECTION[player];
-
-            const {x, y} = point === "Bar" ? BAR_COORDS[player] : POINT_COORDS[realPoint];
+            const {
+                x,
+                y
+            } = realPoint === "Bar" ? BAR_COORDS[player] : realPoint === "0" ? ZERO_COORDS[player] : POINT_COORDS[realPoint];
             const distanceFromCenter = Math.abs(12.5 - Number(realPoint));
 
             for (let i = 0; i < n; i++) {
@@ -44,7 +47,7 @@ export const generateDefaultCheckersData = () => {
                     player,
                     index: i,
                     x,
-                    y: calculateCordY(y, i, direction),
+                    y: calculateCordY(y, i, direction, realPoint),
                     direction,
                     sortOrder: distanceFromCenter + i * 0.1,
                     currentPosition: realPoint,

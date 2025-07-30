@@ -10,60 +10,23 @@ import {
     sliceString,
     togglePlayer
 } from "@/lib/helpers";
-import {BAR_COORDS, POINT_COORDS} from "@/lib/boardData";
+import {BAR_COORDS, POINT_COORDS, ZERO_COORDS} from "@/lib/boardData";
+import {CheckerData, GameData} from "@/components/types";
 
-type Player = "first" | "second";
 
-export interface PlayerInfo {
-    name: string;
-    score: number;
+interface IBoardProps {
+    gameData: GameData,
+    setIsGameFinished: (a: boolean) => void
 }
 
-interface GameData {
-    "first": PlayerInfo,
-    "second": PlayerInfo,
-    "point_match": 1,
-    "turns": Turn[]
-}
-
-interface Move {
-    "from": string,
-    "to": string,
-    "captured": boolean
-}
-
-export interface Turn {
-    "turn": Player,
-    "dice": [
-        number,
-        number
-    ],
-    "cube_owner": null | Player,
-    "cube_value": number,
-    "moves": Move[]
-}
-
-export type CheckerData = {
-    id: string;
-    player: Player;
-    index: number;
-    x: number;
-    y: number;
-    direction: 1 | -1;
-    sortOrder: number;
-    currentPosition: string;
-    check: boolean;
-    delay?: number;
-};
-
-
-export default function Board() {
-    const [data, setData] = useState<GameData | null>(null);
+export default function Board({gameData, setIsGameFinished}: IBoardProps) {
+    const [data] = useState<GameData>(gameData);
     const [currentTurn, setCurrentTurn] = useState(-1);
     const [lastTurn, setLastTurn] = useState(-2);
     const [gameDirection, setGameDirection] = useState(1);
     const [checkers, setCheckers] = useState<CheckerData[]>(generateDefaultCheckersData());
     const screenBlockRef = useRef<HTMLDivElement | null>(null);
+
     const handleScreenshot = async () => {
         if (!screenBlockRef.current) return;
         const result = await fetch('/api/screenshot', {
@@ -88,13 +51,6 @@ export default function Board() {
         link.download = 'board.png';
         link.click();
     };
-
-    useEffect(() => {
-        fetch("/game.json")
-            .then((res) => res.json())
-            .then(setData);
-    }, []);
-
 
     useEffect(() => {
         if (!data) return;
@@ -135,7 +91,7 @@ export default function Board() {
                         foundChecker.currentPosition = 'Bar';
                         foundChecker.x = BAR_COORDS[otherPlayer].x;
                         foundChecker.index = maxIndex + 1;
-                        foundChecker.y = calculateCordY(BAR_COORDS[otherPlayer].y, maxIndex + 1, getDirection('Bar', player));
+                        foundChecker.y = calculateCordY(BAR_COORDS[otherPlayer].y, maxIndex + 1, getDirection('Bar', player), to);
                         foundChecker.check = true;
                         foundChecker.delay = 1 + i * 0.1;
                         i++;
@@ -149,7 +105,7 @@ export default function Board() {
                         foundChecker.currentPosition = from;
                         foundChecker.x = POINT_COORDS[from].x;
                         foundChecker.index = maxIndex + 1;
-                        foundChecker.y = calculateCordY(POINT_COORDS[from].y, maxIndex + 1, getDirection(to, player));
+                        foundChecker.y = calculateCordY(POINT_COORDS[from].y, maxIndex + 1, getDirection(to, player), from);
                         foundChecker.check = true;
                         foundChecker.delay = 1 + i * 0.1;
                         i++;
@@ -169,10 +125,11 @@ export default function Board() {
             }, undefined as CheckerData | undefined)?.index ?? -1;
 
             if (currentChecker) {
+                const coords = to === 'Bar' ? BAR_COORDS[player] : to === "0" ? ZERO_COORDS[player] : POINT_COORDS[to];
                 currentChecker.currentPosition = to;
-                currentChecker.x = to === 'Bar' ? BAR_COORDS[player].x : POINT_COORDS[to].x;
+                currentChecker.x = coords.x;
                 currentChecker.index = maxIndex + 1;
-                currentChecker.y = calculateCordY(to === 'Bar' ? BAR_COORDS[player].y : POINT_COORDS[to].y, maxIndex + 1, getDirection(to, player));
+                currentChecker.y = calculateCordY(coords.y, maxIndex + 1, getDirection(to, player), to);
                 currentChecker.check = true;
                 currentChecker.delay = 1 + i * 0.1;
                 i++;
@@ -182,14 +139,6 @@ export default function Board() {
         // Обновляем состояние
         setCheckers(newCheckers);
     }, [data, currentTurn, lastTurn]);
-
-    if (!data) {
-        return (
-            <div className="min-h-screen flex justify-center items-center">
-                <span className="loader"></span>
-            </div>
-        );
-    }
 
     return (
         <div className="w-full main p-2">
@@ -276,6 +225,9 @@ export default function Board() {
                 <button
                     onClick={() => {
                         if (gameDirection == 1) {
+                            if (currentTurn === data.turns.length - 1) {
+                                setIsGameFinished(true);
+                            }
                             setLastTurn(currentTurn)
                             setCurrentTurn((t) => Math.min(t + 1, data.turns.length - 1))
                         } else {

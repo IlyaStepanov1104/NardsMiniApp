@@ -126,10 +126,7 @@ function extractMoves(playerMoves: string): ParsedMove[] {
     return movesList;
 }
 
-async function parseGame(text: string, dir: string, pointsMatch: number | null): Promise<GameData> {
-    const dirPath = path.resolve('./json', dir);
-    await fs.mkdir(dirPath, { recursive: true });
-
+async function parseGame(text: string, pointsMatch: number | null): Promise<GameData> {
     const lines = text.trim().split('\n');
     const headerData = extractNamesAndScores(lines);
 
@@ -190,21 +187,24 @@ async function parseGame(text: string, dir: string, pointsMatch: number | null):
         }
     }
 
-    await fs.writeFile(path.join(dirPath, 'game.json'), JSON.stringify(gameData, null, 2), { encoding: 'utf-8' });
     return gameData;
 }
 
-export async function parseFile(filePath: string, dir: string): Promise<number[]> {
-    const data = await fs.readFile(filePath, { encoding: 'utf-8' });
+export async function parseFile(data: string, dir: string): Promise<number> {
     const splitFile = data.split(/\n\nGame \d\n/);
-
     const pointsMatch = extractPointMatch(splitFile[0]);
-    const games = splitFile.slice(1);
+    const gamesRaw = splitFile.slice(1);
 
-    for (let i = 0; i < games.length; i++) {
-        const gameDir = path.join(dir, String(i + 1));
-        await parseGame(games[i], gameDir, pointsMatch);
+    const allGames: GameData[] = [];
+
+    for (let i = 0; i < gamesRaw.length; i++) {
+        const game = await parseGame(gamesRaw[i], pointsMatch);
+        allGames.push(game);
     }
 
-    return Array.from({ length: games.length }, (_, i) => i + 1);
+    const dirPath = path.resolve('./public/json', dir);
+    await fs.mkdir(dirPath, { recursive: true });
+    await fs.writeFile(path.join(dirPath, 'games.json'), JSON.stringify(allGames, null, 2), 'utf-8');
+
+    return allGames.length;
 }
