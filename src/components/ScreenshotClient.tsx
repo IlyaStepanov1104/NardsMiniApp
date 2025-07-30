@@ -1,7 +1,7 @@
 'use client';
 import {useEffect, useState, Suspense} from 'react';
 import {useSearchParams} from 'next/navigation';
-import {CheckerData, PlayerInfo, Turn} from "@/components/Board";
+import {CheckerData, PlayerInfo, Turn} from "@/components/types";
 import {sliceString} from "@/lib/helpers";
 import {Checker} from "@/components/Checker";
 import DiceRoll from "@/components/DiceRoll";
@@ -17,7 +17,6 @@ interface Data {
 export default function InnerScreenshotClient() {
     const searchParams = useSearchParams();
     const [state, setState] = useState<Data | null>(null);
-    console.log("%c 1 --> Line: 11||page.tsx\n state: ", "color:#f0f;", state);
 
     useEffect(() => {
         const stateParam = searchParams.get('state');
@@ -34,7 +33,7 @@ export default function InnerScreenshotClient() {
             <div className="header">
                 <div className="header_item justify-start">
                     <div className="checker checker--first">
-                        {state.currentTurn.turn === 'first' && (
+                        {state?.currentTurn?.turn === 'first' && (
                             <svg xmlns="http://www.w3.org/2000/svg"
                                  viewBox="0 0 48 48">
                                 <path fill="#43A047"
@@ -47,7 +46,7 @@ export default function InnerScreenshotClient() {
                 <div className="header_item justify-end">
                     <div className="score">{state?.second.score}</div>
                     <div className="checker checker--second">
-                        {state?.currentTurn.turn === 'second' && (
+                        {state?.currentTurn?.turn === 'second' && (
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
                                  viewBox="0 0 48 48">
                                 <path fill="#43A047"
@@ -68,9 +67,9 @@ export default function InnerScreenshotClient() {
 
             <div className="turns">
                 <div
-                    className={`turns-info p-2 ${state.currentTurn.turn === 'first' && 'turns-info--active'}`}>
-                    {state.currentTurn.turn === 'first' &&
-                        state.currentTurn.moves.map(({
+                    className={`turns-info p-2 ${state?.currentTurn?.turn === 'first' && 'turns-info--active'}`}>
+                    {state.currentTurn?.turn === 'first' &&
+                        state.currentTurn?.moves.map(({
                                                          from,
                                                          to,
                                                          captured
@@ -78,12 +77,12 @@ export default function InnerScreenshotClient() {
                             <span key={id}>{`${from}/${to}${captured ? '*' : ''}`}</span>
                         ))}
                 </div>
-                <DiceRoll dice={state.currentTurn.dice.length ? state.currentTurn.dice : [0, 0]}
+                <DiceRoll dice={state.currentTurn?.dice.length ? state.currentTurn.dice : [0, 0]}
                           size={48} notAnimated/>
                 <div
-                    className={`turns-info p-2 ${state.currentTurn.turn === 'second' && 'turns-info--active'}`}>
-                    {state.currentTurn.turn === 'second' &&
-                        state.currentTurn.moves.map(({
+                    className={`turns-info p-2 ${state.currentTurn?.turn === 'second' && 'turns-info--active'}`}>
+                    {state.currentTurn?.turn === 'second' &&
+                        state.currentTurn?.moves.map(({
                                                          from,
                                                          to,
                                                          captured

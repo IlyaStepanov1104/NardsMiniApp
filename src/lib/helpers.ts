@@ -32,7 +32,6 @@ export const generateDefaultCheckersData = () => {
         for (const [point, count] of entries) {
             const n = Number(count);
             let realPoint = getRealPoint(point, player);
-            console.log("%c 1 --> Line: 32||helpers.ts\n player, point, realPoint: ", "color:#f0f;", player, point, realPoint);
             let direction = getDirection(realPoint, player);
 
             const {

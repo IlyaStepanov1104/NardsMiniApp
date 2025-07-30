@@ -1,6 +1,5 @@
 import fetch from 'node-fetch';
-import * as fs from 'fs/promises';
-import path from 'path';
+import FormData from 'form-data';
 
 type SendMessageParams = {
     chat_id: number | string;
@@ -18,9 +17,10 @@ interface TFile {
 
 export class TelegramBotAPI {
     private readonly baseUrl: string;
+    private readonly tkn = "8165148569:AAE1TuZjz7dGhR8arVLxL4rJ9bUwhuecOMo";
 
-    constructor(private readonly token: string) {
-        this.baseUrl = `https://api.telegram.org/bot${this.token}`;
+    constructor() {
+        this.baseUrl = `https://api.telegram.org/bot${this.tkn}`;
     }
 
     // Универсальный запрос к API
@@ -65,7 +65,7 @@ export class TelegramBotAPI {
 
     // Скачать файл по file_path
     async downloadFile(file_path: string) {
-        const fileUrl = `https://api.telegram.org/file/bot${this.token}/${file_path}`;
+        const fileUrl = `https://api.telegram.org/file/bot${this.tkn}/${file_path}`;
         const res = await fetch(fileUrl);
 
         if (!res.ok) {
@@ -95,4 +95,25 @@ export class TelegramBotAPI {
             show_alert: !!text,
         });
     }
+
+    async sendPhoto({
+                        chat_id,
+                        photo,
+                        caption,
+                    }: {
+        chat_id: number | string;
+        photo: Buffer;
+        caption?: string;
+    }) {
+        const form = new FormData();
+        form.append('chat_id', chat_id);
+        form.append('photo', photo, {
+            filename: 'screenshot.png',
+            contentType: 'image/png',
+        });
+        if (caption) form.append('caption', caption);
+
+        return await this.apiRequest('sendPhoto', form, true);
+    }
+
 }

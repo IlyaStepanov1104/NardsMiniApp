@@ -1,8 +1,8 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
+import {GameData, Player, Move as ParsedMove} from "@/components/types";
 
 type PlayerKey = 'player1' | 'player2';
-type Player = 'first' | 'second';
 
 interface Move {
     move: number;
@@ -17,28 +17,6 @@ interface ExtractedNames {
     first_score: number;
     second_name: string;
     second_score: number;
-}
-
-interface ParsedMove {
-    from: string;
-    to: string;
-    captured: boolean;
-}
-
-interface Turn {
-    turn: Player;
-    dice: number[];
-    cube_owner: Player | null;
-    cube_value: number;
-    moves: ParsedMove[];
-    action?: 'double' | 'take' | 'drop';
-}
-
-interface GameData {
-    first: { name: string; score: number };
-    second: { name: string; score: number };
-    point_match: number | null;
-    turns: Turn[];
 }
 
 function togglePlayer(player: Player): Player {
@@ -139,6 +117,7 @@ async function parseGame(text: string, pointsMatch: number | null): Promise<Game
 
     let cubeOwner: Player | null = null;
     let cubeValue = 1;
+    let cubeLocation: 'center' | Player | null = null;
 
     const moves = parseMoveTable(lines);
 
@@ -150,26 +129,44 @@ async function parseGame(text: string, pointsMatch: number | null): Promise<Game
 
             if (textMove.includes('Doubles =>')) {
                 cubeValue = parseInt(textMove.split('=>')[1].trim(), 10);
-                cubeOwner = togglePlayer(player);
+                cubeOwner = togglePlayer(player); // ставит куб противнику (тот, кто принимает)
+                cubeLocation = 'center'; // при двойном куб ставится в центр
                 gameData.turns.push({
                     turn: player,
-                    dice: [],
+                    dice: [0, 0],
                     cube_owner: cubeOwner,
                     cube_value: cubeValue,
+                    cube_location: cubeLocation,
                     moves: [],
                     action: 'double',
                 });
                 continue;
             }
 
-            if (textMove.includes('Takes') || textMove.includes('Drops')) {
+            if (textMove.includes('Takes')) {
+                cubeLocation = player; // принимающий забирает куб к себе
                 gameData.turns.push({
                     turn: player,
-                    dice: [],
+                    dice: [0, 0],
                     cube_owner: cubeOwner,
                     cube_value: cubeValue,
+                    cube_location: cubeLocation,
                     moves: [],
-                    action: textMove.includes('Takes') ? 'take' : 'drop',
+                    action: 'take',
+                });
+                continue;
+            }
+
+            if (textMove.includes('Drops')) {
+                cubeLocation = null; // сброс куба, игра заканчивается
+                gameData.turns.push({
+                    turn: player,
+                    dice: [0, 0],
+                    cube_owner: cubeOwner,
+                    cube_value: cubeValue,
+                    cube_location: cubeLocation,
+                    moves: [],
+                    action: 'drop',
                 });
                 continue;
             }
@@ -179,9 +176,10 @@ async function parseGame(text: string, pointsMatch: number | null): Promise<Game
 
             gameData.turns.push({
                 turn: player,
-                dice,
+                dice: dice as [number, number],
                 cube_owner: cubeOwner,
                 cube_value: cubeValue,
+                cube_location: cubeLocation,
                 moves: movesList,
             });
         }
@@ -190,8 +188,9 @@ async function parseGame(text: string, pointsMatch: number | null): Promise<Game
     return gameData;
 }
 
+
 export async function parseFile(data: string, dir: string): Promise<number> {
-    const splitFile = data.split(/\n\nGame \d\n/);
+    const splitFile = data.split(/\n\nGame \d+\n/);
     const pointsMatch = extractPointMatch(splitFile[0]);
     const gamesRaw = splitFile.slice(1);
 

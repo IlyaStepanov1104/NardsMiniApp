@@ -8,7 +8,7 @@ export interface PlayerInfo {
 export interface GameData {
     "first": PlayerInfo,
     "second": PlayerInfo,
-    "point_match": 1,
+    "point_match": number | null,
     "turns": Turn[]
 }
 
@@ -19,15 +19,15 @@ export interface Move {
 }
 
 export interface Turn {
-    "turn": Player,
-    "dice": [
-        number,
-        number
-    ],
-    "cube_owner": null | Player,
-    "cube_value": number,
-    "moves": Move[]
+    turn: Player;
+    dice: [number, number];
+    cube_owner: Player | null;
+    cube_value: number;
+    cube_location: 'center' | Player | null; // добавлено
+    moves: Move[];
+    action?: 'double' | 'take' | 'drop';
 }
+
 
 export type CheckerData = {
     id: string;

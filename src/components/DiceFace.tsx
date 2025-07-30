@@ -6,12 +6,14 @@ type DiceFaceProps = {
 }
 
 export default function DiceFace({ value, size = 64 }: DiceFaceProps) {
+    const r = Math.min(5, size/8)
+
     const pip = (cx: number, cy: number) => (
-        <circle cx={cx} cy={cy} r={5} fill="black" key={`${cx}-${cy}`} />
+        <circle cx={cx} cy={cy} r={r} fill="black" key={`${cx}-${cy}`} />
     )
 
     const center = size / 2
-    const offset = size * 0.25
+    const offset = size / 4
     const left = offset
     const right = size - offset
     const top = offset

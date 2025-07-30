@@ -18,6 +18,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -39,6 +40,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -60,6 +62,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -81,6 +84,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -102,6 +106,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "24",
@@ -133,6 +138,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -154,6 +160,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -175,6 +182,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "14",
@@ -196,6 +204,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -217,6 +226,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -238,6 +248,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -259,6 +270,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -280,6 +292,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -311,6 +324,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -332,6 +346,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "11",
@@ -363,6 +378,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "3",
@@ -378,17 +394,25 @@
       },
       {
         "turn": "first",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "center",
         "moves": [],
         "action": "double"
       },
       {
         "turn": "second",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [],
         "action": "take"
       },
@@ -400,6 +424,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "21",
@@ -431,6 +456,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "12",
@@ -452,6 +478,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "15",
@@ -483,6 +510,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "6",
@@ -504,6 +532,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "14",
@@ -535,6 +564,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "6",
@@ -556,6 +586,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "13",
@@ -577,6 +608,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "13",
@@ -608,6 +640,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "11",
@@ -629,6 +662,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "5",
@@ -650,6 +684,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "10",
@@ -671,6 +706,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "13",
@@ -692,6 +728,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "9",
@@ -713,6 +750,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "6",
@@ -734,6 +772,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "8",
@@ -765,6 +804,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "4",
@@ -786,6 +826,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "7",
@@ -807,6 +848,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "22",
@@ -828,6 +870,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "1",
@@ -849,6 +892,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "15",
@@ -870,6 +914,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "6",
@@ -891,6 +936,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "22",
@@ -912,6 +958,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "6",
@@ -933,6 +980,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "14",
@@ -954,6 +1002,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "4",
@@ -975,6 +1024,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "6",
@@ -996,6 +1046,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "5",
@@ -1027,6 +1078,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "22",
@@ -1058,6 +1110,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "1",
@@ -1079,6 +1132,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "6",
@@ -1100,6 +1154,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "2",
@@ -1115,9 +1170,13 @@
       },
       {
         "turn": "second",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": null,
         "moves": [],
         "action": "drop"
       }
@@ -1142,6 +1201,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -1163,6 +1223,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -1184,6 +1245,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -1205,6 +1267,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -1226,6 +1289,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -1247,6 +1311,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "18",
@@ -1268,6 +1333,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -1289,6 +1355,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -1310,6 +1377,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -1341,6 +1409,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -1362,6 +1431,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -1383,6 +1453,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -1404,6 +1475,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -1425,6 +1497,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -1446,6 +1519,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "7",
@@ -1467,6 +1541,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "10",
@@ -1488,6 +1563,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -1509,6 +1585,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -1530,6 +1607,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -1551,6 +1629,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -1572,6 +1651,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "7",
@@ -1593,6 +1673,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -1614,6 +1695,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -1635,6 +1717,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -1656,6 +1739,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "11",
@@ -1677,6 +1761,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "16",
@@ -1698,6 +1783,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "4",
@@ -1719,6 +1805,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "16",
@@ -1740,6 +1827,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "14",
@@ -1761,6 +1849,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -1782,6 +1871,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "21",
@@ -1803,6 +1893,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -1824,6 +1915,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "2",
@@ -1845,6 +1937,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": []
       },
       {
@@ -1855,6 +1948,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "15",
@@ -1876,6 +1970,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -1897,6 +1992,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -1918,6 +2014,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": []
       },
       {
@@ -1928,6 +2025,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "7",
@@ -1949,6 +2047,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": []
       },
       {
@@ -1959,6 +2058,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "22",
@@ -1980,6 +2080,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": []
       },
       {
@@ -1990,6 +2091,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "21",
@@ -2011,6 +2113,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": []
       },
       {
@@ -2021,6 +2124,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "16",
@@ -2042,6 +2146,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": []
       },
       {
@@ -2052,6 +2157,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "10",
@@ -2073,6 +2179,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": []
       },
       {
@@ -2083,6 +2190,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "11",
@@ -2104,6 +2212,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": []
       },
       {
@@ -2114,6 +2223,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "10",
@@ -2145,6 +2255,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": []
       },
       {
@@ -2155,6 +2266,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "4",
@@ -2176,6 +2288,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": []
       },
       {
@@ -2186,6 +2299,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "5",
@@ -2217,6 +2331,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -2233,6 +2348,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "3",
@@ -2254,6 +2370,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": []
       },
       {
@@ -2264,6 +2381,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "3",
@@ -2295,6 +2413,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -2316,6 +2435,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "1",
@@ -2337,6 +2457,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "21",
@@ -2371,6 +2492,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -2392,6 +2514,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -2413,6 +2536,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -2434,6 +2558,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -2455,6 +2580,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -2476,6 +2602,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "17",
@@ -2507,6 +2634,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -2528,6 +2656,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "22",
@@ -2559,6 +2688,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -2580,6 +2710,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "17",
@@ -2601,6 +2732,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -2622,6 +2754,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -2643,6 +2776,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -2664,6 +2798,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -2685,6 +2820,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -2706,21 +2842,30 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": []
       },
       {
         "turn": "second",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "center",
         "moves": [],
         "action": "double"
       },
       {
         "turn": "first",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [],
         "action": "take"
       },
@@ -2732,6 +2877,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "23",
@@ -2753,6 +2899,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -2774,6 +2921,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "13",
@@ -2805,6 +2953,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "8",
@@ -2826,6 +2975,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "2",
@@ -2847,6 +2997,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -2868,6 +3019,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -2899,6 +3051,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -2909,6 +3062,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "5",
@@ -2930,6 +3084,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -2940,6 +3095,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "18",
@@ -2961,6 +3117,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -2971,6 +3128,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "7",
@@ -3002,6 +3160,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -3012,6 +3171,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "22",
@@ -3033,6 +3193,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -3043,6 +3204,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "22",
@@ -3064,6 +3226,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -3074,6 +3237,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "18",
@@ -3095,6 +3259,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -3105,6 +3270,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "13",
@@ -3126,6 +3292,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -3136,6 +3303,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "15",
@@ -3157,6 +3325,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -3167,6 +3336,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "14",
@@ -3188,6 +3358,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -3198,6 +3369,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "10",
@@ -3219,6 +3391,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -3229,6 +3402,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "10",
@@ -3260,6 +3434,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -3270,6 +3445,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "6",
@@ -3291,6 +3467,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -3301,6 +3478,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "5",
@@ -3322,6 +3500,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -3332,6 +3511,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "4",
@@ -3353,6 +3533,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -3369,6 +3550,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -3379,6 +3561,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -3389,6 +3572,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -3399,6 +3583,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -3409,6 +3594,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -3430,6 +3616,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -3440,6 +3627,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "16",
@@ -3461,6 +3649,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -3477,6 +3666,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "13",
@@ -3498,6 +3688,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -3519,6 +3710,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "3",
@@ -3550,6 +3742,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "20",
@@ -3575,9 +3768,13 @@
       },
       {
         "turn": "second",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": null,
         "moves": [],
         "action": "drop"
       }
@@ -3602,6 +3799,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -3623,6 +3821,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "24",
@@ -3644,6 +3843,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -3665,6 +3865,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "15",
@@ -3686,6 +3887,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -3717,6 +3919,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -3732,9 +3935,13 @@
       },
       {
         "turn": "second",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "center",
         "moves": [],
         "action": "double"
       }
@@ -3759,6 +3966,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -3780,6 +3988,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -3801,6 +4010,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -3822,6 +4032,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -3843,6 +4054,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -3874,6 +4086,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -3889,17 +4102,25 @@
       },
       {
         "turn": "first",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "center",
         "moves": [],
         "action": "double"
       },
       {
         "turn": "second",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": null,
         "moves": [],
         "action": "drop"
       }
@@ -3924,6 +4145,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -3945,6 +4167,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -3966,6 +4189,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -3987,6 +4211,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -4008,6 +4233,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -4029,6 +4255,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": []
       },
       {
@@ -4039,6 +4266,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -4060,6 +4288,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -4081,6 +4310,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -4102,6 +4332,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": []
       },
       {
@@ -4112,6 +4343,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "11",
@@ -4133,6 +4365,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -4154,6 +4387,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -4175,6 +4409,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -4196,6 +4431,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -4217,6 +4453,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -4238,6 +4475,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -4259,6 +4497,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -4280,6 +4519,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "20",
@@ -4311,6 +4551,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -4332,6 +4573,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "24",
@@ -4353,6 +4595,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "24",
@@ -4374,6 +4617,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "14",
@@ -4395,6 +4639,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "18",
@@ -4426,6 +4671,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -4447,6 +4693,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -4468,6 +4715,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "7",
@@ -4489,6 +4737,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -4510,6 +4759,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "20",
@@ -4531,6 +4781,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -4552,6 +4803,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -4573,6 +4825,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -4594,6 +4847,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "20",
@@ -4615,6 +4869,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -4636,6 +4891,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -4657,6 +4913,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -4688,6 +4945,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "7",
@@ -4709,6 +4967,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "7",
@@ -4730,6 +4989,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "11",
@@ -4751,6 +5011,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "10",
@@ -4772,6 +5033,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "11",
@@ -4793,6 +5055,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "10",
@@ -4808,17 +5071,25 @@
       },
       {
         "turn": "first",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "center",
         "moves": [],
         "action": "double"
       },
       {
         "turn": "second",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [],
         "action": "take"
       },
@@ -4830,6 +5101,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "2",
@@ -4851,6 +5123,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "4",
@@ -4882,6 +5155,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "4",
@@ -4903,6 +5177,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "6",
@@ -4924,6 +5199,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "3",
@@ -4945,6 +5221,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "1",
@@ -4976,6 +5253,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "2",
@@ -4997,6 +5275,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "3",
@@ -5018,6 +5297,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "1",
@@ -5039,6 +5319,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "2",
@@ -5060,6 +5341,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "4",
@@ -5091,6 +5373,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "5",
@@ -5112,6 +5395,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "5",
@@ -5133,6 +5417,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "5",
@@ -5167,6 +5452,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -5188,6 +5474,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -5209,6 +5496,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -5230,6 +5518,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "20",
@@ -5251,6 +5540,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -5282,6 +5572,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -5303,6 +5594,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -5324,6 +5616,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "11",
@@ -5345,6 +5638,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -5366,6 +5660,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -5387,6 +5682,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -5408,6 +5704,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -5429,6 +5726,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "21",
@@ -5450,6 +5748,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -5471,6 +5770,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -5492,6 +5792,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -5513,6 +5814,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "4",
@@ -5534,6 +5836,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -5555,6 +5858,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -5576,6 +5880,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -5597,6 +5902,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -5618,6 +5924,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -5639,6 +5946,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -5660,21 +5968,30 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": []
       },
       {
         "turn": "first",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "center",
         "moves": [],
         "action": "double"
       },
       {
         "turn": "second",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": null,
         "moves": [],
         "action": "drop"
       }
@@ -5699,6 +6016,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -5720,6 +6038,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -5741,6 +6060,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -5772,6 +6092,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -5793,6 +6114,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -5814,6 +6136,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -5835,6 +6158,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "24",
@@ -5856,6 +6180,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -5877,6 +6202,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -5898,6 +6224,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "20",
@@ -5919,6 +6246,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "4",
@@ -5940,6 +6268,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -5961,6 +6290,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -5992,6 +6322,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -6013,6 +6344,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -6034,6 +6366,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -6055,6 +6388,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "18",
@@ -6086,6 +6420,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -6107,6 +6442,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "4",
@@ -6128,6 +6464,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "20",
@@ -6159,6 +6496,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -6190,6 +6528,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "7",
@@ -6211,6 +6550,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "7",
@@ -6232,6 +6572,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -6253,6 +6594,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "7",
@@ -6274,6 +6616,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "5",
@@ -6305,6 +6648,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "3",
@@ -6326,6 +6670,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -6357,6 +6702,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -6378,6 +6724,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "5",
@@ -6399,6 +6746,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "7",
@@ -6420,6 +6768,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "11",
@@ -6441,6 +6790,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -6462,6 +6812,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "7",
@@ -6483,6 +6834,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "7",
@@ -6504,6 +6856,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "16",
@@ -6535,6 +6888,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "15",
@@ -6556,13 +6910,18 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": []
       },
       {
         "turn": "second",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "center",
         "moves": [],
         "action": "double"
       }
@@ -6587,6 +6946,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -6608,6 +6968,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -6639,6 +7000,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -6660,6 +7022,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -6681,6 +7044,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -6702,6 +7066,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -6723,6 +7088,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -6754,6 +7120,7 @@
         ],
         "cube_owner": null,
         "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -6769,28 +7136,50 @@
       },
       {
         "turn": "first",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "center",
         "moves": [],
         "action": "double"
       },
       {
         "turn": "second",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": null,
         "moves": [],
         "action": "drop"
-      },
+      }
+    ]
+  },
+  {
+    "first": {
+      "name": "Bridges",
+      "score": 9
+    },
+    "second": {
+      "name": "Thomas Shelby",
+      "score": 6
+    },
+    "point_match": 15,
+    "turns": [
       {
         "turn": "first",
         "dice": [
           6,
           1
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -6810,8 +7199,9 @@
           6,
           6
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -6841,8 +7231,9 @@
           6,
           3
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -6862,8 +7253,9 @@
           3,
           6
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -6883,8 +7275,9 @@
           3,
           4
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "7",
@@ -6904,8 +7297,9 @@
           3,
           5
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -6925,8 +7319,9 @@
           6,
           2
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -6946,8 +7341,9 @@
           2,
           6
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "14",
@@ -6967,8 +7363,9 @@
           3,
           1
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -6988,8 +7385,9 @@
           5,
           2
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "21",
@@ -7009,8 +7407,9 @@
           1,
           5
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -7030,8 +7429,9 @@
           4,
           5
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "14",
@@ -7051,8 +7451,9 @@
           3,
           5
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "7",
@@ -7072,8 +7473,9 @@
           1,
           4
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -7093,8 +7495,9 @@
           4,
           3
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -7114,8 +7517,9 @@
           5,
           5
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -7145,8 +7549,9 @@
           1,
           5
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "10",
@@ -7166,8 +7571,9 @@
           3,
           1
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "24",
@@ -7187,8 +7593,9 @@
           6,
           3
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "7",
@@ -7208,8 +7615,9 @@
           5,
           6
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": []
       },
       {
@@ -7218,8 +7626,9 @@
           6,
           2
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "7",
@@ -7239,8 +7648,9 @@
           5,
           4
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -7260,26 +7670,45 @@
           3,
           3
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": []
       },
       {
         "turn": "second",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "center",
         "moves": [],
         "action": "double"
-      },
+      }
+    ]
+  },
+  {
+    "first": {
+      "name": "Bridges",
+      "score": 9
+    },
+    "second": {
+      "name": "Thomas Shelby",
+      "score": 7
+    },
+    "point_match": 15,
+    "turns": [
       {
         "turn": "first",
         "dice": [
           4,
           2
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -7299,8 +7728,9 @@
           5,
           1
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "24",
@@ -7320,8 +7750,9 @@
           3,
           5
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -7341,8 +7772,9 @@
           2,
           3
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -7362,8 +7794,9 @@
           5,
           4
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -7383,8 +7816,9 @@
           1,
           5
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -7404,8 +7838,9 @@
           5,
           4
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -7425,8 +7860,9 @@
           3,
           1
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -7446,8 +7882,9 @@
           2,
           5
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -7467,8 +7904,9 @@
           6,
           5
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -7483,8 +7921,9 @@
           4,
           5
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -7504,8 +7943,9 @@
           4,
           2
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -7525,8 +7965,9 @@
           4,
           5
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -7546,8 +7987,9 @@
           1,
           4
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -7567,8 +8009,9 @@
           3,
           4
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "20",
@@ -7588,8 +8031,9 @@
           5,
           4
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -7609,8 +8053,9 @@
           1,
           1
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -7640,8 +8085,9 @@
           1,
           5
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -7661,8 +8107,9 @@
           4,
           3
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "21",
@@ -7682,8 +8129,9 @@
           1,
           5
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -7703,8 +8151,9 @@
           5,
           3
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -7724,8 +8173,9 @@
           1,
           2
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -7745,8 +8195,9 @@
           1,
           5
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "14",
@@ -7766,23 +8217,32 @@
           1,
           3
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": []
       },
       {
         "turn": "first",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "center",
         "moves": [],
         "action": "double"
       },
       {
         "turn": "second",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [],
         "action": "take"
       },
@@ -7794,6 +8254,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "8",
@@ -7815,6 +8276,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": []
       },
       {
@@ -7825,6 +8287,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "15",
@@ -7846,6 +8309,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": []
       },
       {
@@ -7856,6 +8320,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "13",
@@ -7877,6 +8342,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": []
       },
       {
@@ -7887,6 +8353,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "13",
@@ -7908,6 +8375,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": []
       },
       {
@@ -7918,6 +8386,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "9",
@@ -7939,6 +8408,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": []
       },
       {
@@ -7949,6 +8419,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "13",
@@ -7970,6 +8441,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "Bar",
@@ -7991,6 +8463,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "6",
@@ -8022,6 +8495,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "18",
@@ -8043,6 +8517,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "6",
@@ -8064,6 +8539,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "16",
@@ -8085,6 +8561,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "6",
@@ -8106,6 +8583,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "20",
@@ -8127,6 +8605,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "1",
@@ -8148,6 +8627,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "19",
@@ -8179,6 +8659,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "4",
@@ -8200,6 +8681,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "18",
@@ -8221,6 +8703,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "2",
@@ -8242,6 +8725,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "8",
@@ -8273,6 +8757,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "1",
@@ -8294,6 +8779,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "16",
@@ -8315,6 +8801,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "3",
@@ -8336,6 +8823,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "15",
@@ -8367,6 +8855,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "2",
@@ -8388,6 +8877,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "11",
@@ -8400,15 +8890,29 @@
             "captured": false
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "first": {
+      "name": "Bridges",
+      "score": 13
+    },
+    "second": {
+      "name": "Thomas Shelby",
+      "score": 7
+    },
+    "point_match": 15,
+    "turns": [
       {
         "turn": "first",
         "dice": [
           4,
           3
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -8428,8 +8932,9 @@
           6,
           3
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -8449,8 +8954,9 @@
           5,
           6
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -8470,8 +8976,9 @@
           5,
           5
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -8501,8 +9008,9 @@
           1,
           4
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -8522,8 +9030,9 @@
           4,
           4
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -8553,23 +9062,32 @@
           2,
           3
         ],
-        "cube_owner": "second",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": []
       },
       {
         "turn": "second",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "center",
         "moves": [],
         "action": "double"
       },
       {
         "turn": "first",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [],
         "action": "take"
       },
@@ -8581,6 +9099,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "21",
@@ -8602,6 +9121,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -8618,6 +9138,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "10",
@@ -8639,6 +9160,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -8660,6 +9182,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -8681,6 +9204,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -8702,6 +9226,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -8723,6 +9248,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "11",
@@ -8754,6 +9280,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -8785,6 +9312,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "8",
@@ -8806,6 +9334,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "16",
@@ -8837,6 +9366,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -8847,6 +9377,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "21",
@@ -8868,6 +9399,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -8878,6 +9410,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "20",
@@ -8899,6 +9432,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -8909,6 +9443,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "15",
@@ -8930,6 +9465,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -8951,6 +9487,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "10",
@@ -8972,6 +9509,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "8",
@@ -9003,6 +9541,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "6",
@@ -9024,6 +9563,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "13",
@@ -9055,6 +9595,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "13",
@@ -9086,6 +9627,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "16",
@@ -9107,6 +9649,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "7",
@@ -9128,6 +9671,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "9",
@@ -9149,6 +9693,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "7",
@@ -9170,6 +9715,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "11",
@@ -9191,6 +9737,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "7",
@@ -9212,6 +9759,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "20",
@@ -9233,6 +9781,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "3",
@@ -9254,6 +9803,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "18",
@@ -9275,6 +9825,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "1",
@@ -9296,6 +9847,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "15",
@@ -9327,6 +9879,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "3",
@@ -9348,6 +9901,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "11",
@@ -9369,6 +9923,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "4",
@@ -9390,6 +9945,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "7",
@@ -9421,6 +9977,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "4",
@@ -9442,6 +9999,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "6",
@@ -9463,6 +10021,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "2",
@@ -9475,15 +10034,29 @@
             "captured": false
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "first": {
+      "name": "Bridges",
+      "score": 13
+    },
+    "second": {
+      "name": "Thomas Shelby",
+      "score": 9
+    },
+    "point_match": 15,
+    "turns": [
       {
         "turn": "first",
         "dice": [
           6,
           2
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "23",
@@ -9503,8 +10076,9 @@
           1,
           5
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -9524,8 +10098,9 @@
           2,
           2
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -9555,8 +10130,9 @@
           3,
           5
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -9576,8 +10152,9 @@
           2,
           6
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "21",
@@ -9597,8 +10174,9 @@
           5,
           4
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "22",
@@ -9618,8 +10196,9 @@
           1,
           5
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -9639,8 +10218,9 @@
           1,
           3
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -9660,8 +10240,9 @@
           4,
           2
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -9681,8 +10262,9 @@
           2,
           4
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "24",
@@ -9702,8 +10284,9 @@
           5,
           6
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -9723,8 +10306,9 @@
           1,
           2
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -9744,8 +10328,9 @@
           3,
           4
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -9765,8 +10350,9 @@
           4,
           4
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -9796,8 +10382,9 @@
           4,
           2
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -9817,8 +10404,9 @@
           1,
           4
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -9838,8 +10426,9 @@
           4,
           4
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": []
       },
       {
@@ -9848,8 +10437,9 @@
           3,
           1
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -9869,8 +10459,9 @@
           1,
           3
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -9885,8 +10476,9 @@
           1,
           3
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "2",
@@ -9906,8 +10498,9 @@
           1,
           5
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -9923,17 +10516,25 @@
       },
       {
         "turn": "second",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "center",
         "moves": [],
         "action": "double"
       },
       {
         "turn": "first",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [],
         "action": "take"
       },
@@ -9945,6 +10546,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -9976,6 +10578,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "8",
@@ -9997,6 +10600,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "22",
@@ -10018,6 +10622,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "8",
@@ -10039,6 +10644,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "6",
@@ -10060,6 +10666,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "11",
@@ -10081,6 +10688,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "13",
@@ -10102,6 +10710,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "9",
@@ -10123,6 +10732,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "13",
@@ -10144,6 +10754,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "8",
@@ -10165,6 +10776,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "13",
@@ -10186,6 +10798,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "23",
@@ -10217,6 +10830,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "10",
@@ -10238,6 +10852,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "3",
@@ -10259,6 +10874,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "15",
@@ -10290,6 +10906,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "11",
@@ -10311,6 +10928,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "4",
@@ -10332,6 +10950,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "11",
@@ -10353,6 +10972,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "6",
@@ -10374,6 +10994,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "11",
@@ -10395,6 +11016,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "5",
@@ -10426,6 +11048,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "9",
@@ -10457,6 +11080,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "1",
@@ -10478,6 +11102,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "3",
@@ -10499,6 +11124,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "5",
@@ -10530,6 +11156,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "1",
@@ -10551,6 +11178,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "4",
@@ -10582,6 +11210,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "1",
@@ -10603,6 +11232,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "1",
@@ -10624,6 +11254,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "1",
@@ -10645,6 +11276,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "first",
         "moves": [
           {
             "from": "1",
@@ -10652,15 +11284,29 @@
             "captured": false
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "first": {
+      "name": "Bridges",
+      "score": 13
+    },
+    "second": {
+      "name": "Thomas Shelby",
+      "score": 11
+    },
+    "point_match": 15,
+    "turns": [
       {
         "turn": "second",
         "dice": [
           5,
           6
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "24",
@@ -10680,8 +11326,9 @@
           6,
           2
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "24",
@@ -10701,8 +11348,9 @@
           4,
           4
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "13",
@@ -10732,8 +11380,9 @@
           2,
           4
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -10753,8 +11402,9 @@
           6,
           5
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -10774,8 +11424,9 @@
           3,
           4
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -10791,20 +11442,38 @@
       },
       {
         "turn": "second",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "first",
         "cube_value": 2,
+        "cube_location": "center",
         "moves": [],
         "action": "double"
-      },
+      }
+    ]
+  },
+  {
+    "first": {
+      "name": "Bridges",
+      "score": 13
+    },
+    "second": {
+      "name": "Thomas Shelby",
+      "score": 12
+    },
+    "point_match": 15,
+    "turns": [
       {
         "turn": "second",
         "dice": [
           1,
           6
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -10824,8 +11493,9 @@
           1,
           4
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "24",
@@ -10845,8 +11515,9 @@
           1,
           2
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "6",
@@ -10866,8 +11537,9 @@
           4,
           1
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -10887,8 +11559,9 @@
           1,
           5
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -10908,8 +11581,9 @@
           1,
           3
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -10929,8 +11603,9 @@
           3,
           5
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "Bar",
@@ -10950,8 +11625,9 @@
           5,
           5
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": [
           {
             "from": "8",
@@ -10981,23 +11657,32 @@
           3,
           1
         ],
-        "cube_owner": "first",
-        "cube_value": 2,
+        "cube_owner": null,
+        "cube_value": 1,
+        "cube_location": null,
         "moves": []
       },
       {
         "turn": "first",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "center",
         "moves": [],
         "action": "double"
       },
       {
         "turn": "second",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [],
         "action": "take"
       },
@@ -11009,6 +11694,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "24",
@@ -11030,6 +11716,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "Bar",
@@ -11051,6 +11738,7 @@
         ],
         "cube_owner": "second",
         "cube_value": 2,
+        "cube_location": "second",
         "moves": [
           {
             "from": "13",
@@ -11066,17 +11754,25 @@
       },
       {
         "turn": "second",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "center",
         "moves": [],
         "action": "double"
       },
       {
         "turn": "first",
-        "dice": [],
+        "dice": [
+          0,
+          0
+        ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [],
         "action": "take"
       },
@@ -11088,6 +11784,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "21",
@@ -11109,6 +11806,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -11130,6 +11828,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -11151,6 +11850,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "22",
@@ -11172,6 +11872,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "8",
@@ -11193,6 +11894,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "24",
@@ -11214,6 +11916,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -11235,6 +11938,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -11256,6 +11960,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "6",
@@ -11277,6 +11982,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -11298,6 +12004,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -11329,6 +12036,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -11350,6 +12058,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "23",
@@ -11371,6 +12080,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "10",
@@ -11392,6 +12102,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "23",
@@ -11413,6 +12124,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "13",
@@ -11434,6 +12146,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "23",
@@ -11455,6 +12168,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -11476,6 +12190,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "18",
@@ -11497,6 +12212,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "24",
@@ -11518,6 +12234,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "21",
@@ -11539,6 +12256,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -11549,6 +12267,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "13",
@@ -11570,6 +12289,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "18",
@@ -11601,6 +12321,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "8",
@@ -11622,6 +12343,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "10",
@@ -11643,6 +12365,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "16",
@@ -11674,6 +12397,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "10",
@@ -11695,6 +12419,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "10",
@@ -11716,6 +12441,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "16",
@@ -11737,6 +12463,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "5",
@@ -11758,6 +12485,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "9",
@@ -11779,6 +12507,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "6",
@@ -11800,6 +12529,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "16",
@@ -11821,6 +12551,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "21",
@@ -11842,6 +12573,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -11852,6 +12584,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "21",
@@ -11873,6 +12606,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -11883,6 +12617,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "13",
@@ -11904,6 +12639,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -11914,6 +12650,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "17",
@@ -11935,6 +12672,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -11945,6 +12683,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "13",
@@ -11966,6 +12705,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -11987,6 +12727,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "5",
@@ -12018,6 +12759,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -12028,6 +12770,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "8",
@@ -12049,6 +12792,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -12059,6 +12803,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "10",
@@ -12080,6 +12825,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -12101,6 +12847,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "12",
@@ -12122,6 +12869,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -12143,6 +12891,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -12164,6 +12913,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "16",
@@ -12185,6 +12935,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "18",
@@ -12216,6 +12967,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": []
       },
       {
@@ -12226,6 +12978,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "6",
@@ -12257,6 +13010,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "Bar",
@@ -12278,6 +13032,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "4",
@@ -12299,6 +13054,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "19",
@@ -12320,6 +13076,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "4",
@@ -12341,6 +13098,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "8",
@@ -12362,6 +13120,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "4",
@@ -12383,6 +13142,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "15",
@@ -12404,6 +13164,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "3",
@@ -12435,6 +13196,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "12",
@@ -12456,6 +13218,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "2",
@@ -12477,6 +13240,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "8",
@@ -12498,6 +13262,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "2",
@@ -12519,6 +13284,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "1",
@@ -12540,6 +13306,7 @@
         ],
         "cube_owner": "first",
         "cube_value": 4,
+        "cube_location": "first",
         "moves": [
           {
             "from": "1",

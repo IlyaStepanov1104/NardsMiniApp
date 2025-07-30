@@ -11,25 +11,44 @@ import {
     togglePlayer
 } from "@/lib/helpers";
 import {BAR_COORDS, POINT_COORDS, ZERO_COORDS} from "@/lib/boardData";
-import {CheckerData, GameData} from "@/components/types";
+import {CheckerData, GameData, Player} from "@/components/types";
+import DiceFace from "@/components/DiceFace";
 
 
 interface IBoardProps {
-    gameData: GameData,
-    setIsGameFinished: (a: boolean) => void
+    gameData?: GameData,
+    setIsGameFinished: (a: boolean) => void;
+    chatId: string | null;
 }
 
-export default function Board({gameData, setIsGameFinished}: IBoardProps) {
-    const [data] = useState<GameData>(gameData);
+function getCubeCoords(cubeLocation: 'center' | Player | null) {
+    if (cubeLocation === 'center') {
+        return {x: 'calc(50% - 16px)', y: 'calc(50% - 16px)'}; // пример координат центра доски
+    }
+    if (cubeLocation === 'first') {
+        return {x: '60%', y: '60%'}; // рядом с первым игроком
+    }
+    if (cubeLocation === 'second') {
+        return {x: '60%', y: '60%'}; // рядом со вторым игроком
+    }
+    return null;
+}
+
+export default function Board({gameData, setIsGameFinished, chatId}: IBoardProps) {
+    const [data] = useState<GameData | undefined>(gameData);
     const [currentTurn, setCurrentTurn] = useState(-1);
     const [lastTurn, setLastTurn] = useState(-2);
     const [gameDirection, setGameDirection] = useState(1);
     const [checkers, setCheckers] = useState<CheckerData[]>(generateDefaultCheckersData());
+    const [screenPending, setScreenPending] = useState(false);
     const screenBlockRef = useRef<HTMLDivElement | null>(null);
+    const turn = data?.turns[currentTurn];
+    const cubeCoords = turn ? getCubeCoords(turn.cube_location) : null;
 
     const handleScreenshot = async () => {
         if (!screenBlockRef.current) return;
-        const result = await fetch('/api/screenshot', {
+        setScreenPending(true);
+        await fetch('/api/screenshot', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -40,21 +59,14 @@ export default function Board({gameData, setIsGameFinished}: IBoardProps) {
                     "point_match": data?.point_match,
                     currentTurn: data?.turns[currentTurn],
                 },
+                chat_id: chatId,
             }),
         });
-
-        const blob = await result.blob();
-        const url = URL.createObjectURL(blob);
-
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = 'board.png';
-        link.click();
+        setScreenPending(false);
     };
 
     useEffect(() => {
         if (!data) return;
-        const turn = data.turns[currentTurn];
         if (!turn) return;
 
         // Создаем копию массива с обновленными значениями
@@ -140,18 +152,51 @@ export default function Board({gameData, setIsGameFinished}: IBoardProps) {
         setCheckers(newCheckers);
     }, [data, currentTurn, lastTurn]);
 
+    if (!data) {
+        return (
+            <div className="min-h-screen flex justify-center items-center">
+                <span className="loader"></span>
+            </div>
+        );
+    }
+
     return (
         <div className="w-full main p-2">
             <div ref={screenBlockRef} style={{backgroundColor: '#fff8e7'}}>
                 <div className="header">
                     <div className="header_item justify-start">
                         <div className="checker checker--first">
-                            {data.turns[currentTurn]?.turn === 'first' && (
-                                <svg xmlns="http://www.w3.org/2000/svg"
+                            {turn?.turn === 'first' && (turn.action === 'drop' ? (
+                                <svg fill="#E53935" viewBox="0 0 16 16"
+                                     xmlns="http://www.w3.org/2000/svg" width="60%">
+                                    <path
+                                        d="M0 14.545L1.455 16 8 9.455 14.545 16 16 14.545 9.455 8 16 1.455 14.545 0 8 6.545 1.455 0 0 1.455 6.545 8z"
+                                        fillRule="evenodd"></path>
+                                </svg>
+                            ) : (
+                                <svg className="status" xmlns="http://www.w3.org/2000/svg"
                                      viewBox="0 0 48 48">
                                     <path fill="#43A047"
                                           d="M40.6 12.1L17 35.7 7.4 26.1 4.6 29 17 41.3 43.4 14.9z"></path>
-                                </svg>)}
+                                </svg>))}
+                            {turn?.cube_owner === 'first' && turn.action !== 'double' && cubeCoords && (
+                                <div
+                                    style={{
+                                        position: 'absolute',
+                                        left: cubeCoords.x,
+                                        top: cubeCoords.y,
+                                        zIndex: 1000,
+                                        borderRadius: 8,
+                                        background: 'white',
+                                        boxShadow: '0 0 4px #aaa',
+                                        border: '1px solid gray',
+                                        width: 24,
+                                        height: 24
+                                    }}
+                                >
+                                    {turn.cube_value}
+                                </div>
+                            )}
                         </div>
                         <div className="score">{data.first.score}</div>
                     </div>
@@ -159,12 +204,42 @@ export default function Board({gameData, setIsGameFinished}: IBoardProps) {
                     <div className="header_item justify-end">
                         <div className="score">{data.second.score}</div>
                         <div className="checker checker--second">
-                            {data.turns[currentTurn]?.turn === 'second' && (
-                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                            {turn?.turn === 'second' && (turn.action === 'drop' ? (
+                                <svg fill="#E53935" viewBox="0 0 16 16"
+                                     xmlns="http://www.w3.org/2000/svg" width="60%">
+                                    <path
+                                        d="M0 14.545L1.455 16 8 9.455 14.545 16 16 14.545 9.455 8 16 1.455 14.545 0 8 6.545 1.455 0 0 1.455 6.545 8z"
+                                        fillRule="evenodd"></path>
+                                </svg>
+                            ) : (
+                                <svg className="status" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100"
+                                     height="100"
                                      viewBox="0 0 48 48">
                                     <path fill="#43A047"
                                           d="M40.6 12.1L17 35.7 7.4 26.1 4.6 29 17 41.3 43.4 14.9z"></path>
-                                </svg>)}
+                                </svg>))}
+                            {turn?.cube_owner === 'second' && turn.action !== 'double' && cubeCoords && (
+                                <div
+                                    style={{
+                                        position: 'absolute',
+                                        left: cubeCoords.x,
+                                        top: cubeCoords.y,
+                                        zIndex: 1000,
+                                        borderRadius: 8,
+                                        background: 'white',
+                                        boxShadow: '0 0 4px #aaa',
+                                        border: '1px solid gray',
+                                        width: 24,
+                                        height: 24,
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        fontSize: 16
+                                    }}
+                                >
+                                    {turn.cube_value}
+                                </div>
+                            )}
                         </div>
                     </div>
                     <div className="name text-left">{sliceString(data.first.name)}</div>
@@ -173,6 +248,28 @@ export default function Board({gameData, setIsGameFinished}: IBoardProps) {
                 </div>
 
                 <div className="board">
+                    {turn?.action === 'double' && cubeCoords && (
+                        <div
+                            style={{
+                                position: 'absolute',
+                                left: cubeCoords.x,
+                                top: cubeCoords.y,
+                                zIndex: 1000,
+                                borderRadius: 8,
+                                background: 'white',
+                                boxShadow: '0 0 4px #aaa',
+                                border: '1px solid gray',
+                                width: 32,
+                                height: 32,
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                fontSize: 24
+                            }}
+                        >
+                            {turn.cube_value}
+                        </div>
+                    )}
                     {checkers.map((checker) => (
                         <Checker key={checker.id} {...checker} />
                     ))}
@@ -180,26 +277,26 @@ export default function Board({gameData, setIsGameFinished}: IBoardProps) {
 
                 <div className="turns">
                     <div
-                        className={`turns-info p-2 ${data.turns[currentTurn]?.turn === 'first' && 'turns-info--active'}`}>
-                        {data.turns[currentTurn]?.turn === 'first' &&
-                            data.turns[currentTurn].moves.map(({
-                                                                   from,
-                                                                   to,
-                                                                   captured
-                                                               }, id) => (
+                        className={`turns-info p-2 ${turn?.turn === 'first' && 'turns-info--active'}`}>
+                        {turn?.turn === 'first' &&
+                            turn.moves.map(({
+                                                from,
+                                                to,
+                                                captured
+                                            }, id) => (
                                 <span key={id}>{`${from}/${to}${captured ? '*' : ''}`}</span>
                             ))}
                     </div>
-                    <DiceRoll dice={data.turns[currentTurn]?.dice.length ? data.turns[currentTurn].dice : [0, 0]}
+                    <DiceRoll dice={turn?.dice.length ? turn.dice : [0, 0]}
                               size={48}/>
                     <div
-                        className={`turns-info p-2 ${data.turns[currentTurn]?.turn === 'second' && 'turns-info--active'}`}>
-                        {data.turns[currentTurn]?.turn === 'second' &&
-                            data.turns[currentTurn].moves.map(({
-                                                                   from,
-                                                                   to,
-                                                                   captured
-                                                               }, id) => (
+                        className={`turns-info p-2 ${turn?.turn === 'second' && 'turns-info--active'}`}>
+                        {turn?.turn === 'second' &&
+                            turn.moves.map(({
+                                                from,
+                                                to,
+                                                captured
+                                            }, id) => (
                                 <span key={id}>{`${from}/${to}${captured ? '*' : ''}`}</span>
                             ))}
                     </div>
@@ -226,7 +323,7 @@ export default function Board({gameData, setIsGameFinished}: IBoardProps) {
                     onClick={() => {
                         if (gameDirection == 1) {
                             if (currentTurn === data.turns.length - 1) {
-                                setIsGameFinished(true);
+                                setIsGameFinished(true)
                             }
                             setLastTurn(currentTurn)
                             setCurrentTurn((t) => Math.min(t + 1, data.turns.length - 1))
@@ -240,19 +337,25 @@ export default function Board({gameData, setIsGameFinished}: IBoardProps) {
                 />
             </div>}
             <div className="flex justify-center">
-                <button className="mt-2 rounded-md bg-slate-800 p-2 text-white" onClick={handleScreenshot}>
-                    <svg className="screen" viewBox="0 0 24 24" fill="none"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                        <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <circle cx="12" cy="13" r="3" stroke="currentColor" strokeWidth="1.5"></circle>
-                            <path
-                                d="M2 13.3636C2 10.2994 2 8.76721 2.74902 7.6666C3.07328 7.19014 3.48995 6.78104 3.97524 6.46268C4.69555 5.99013 5.59733 5.82123 6.978 5.76086C7.63685 5.76086 8.20412 5.27068 8.33333 4.63636C8.52715 3.68489 9.37805 3 10.3663 3H13.6337C14.6219 3 15.4728 3.68489 15.6667 4.63636C15.7959 5.27068 16.3631 5.76086 17.022 5.76086C18.4027 5.82123 19.3044 5.99013 20.0248 6.46268C20.51 6.78104 20.9267 7.19014 21.251 7.6666C22 8.76721 22 10.2994 22 13.3636C22 16.4279 22 17.9601 21.251 19.0607C20.9267 19.5371 20.51 19.9462 20.0248 20.2646C18.9038 21 17.3433 21 14.2222 21H9.77778C6.65675 21 5.09624 21 3.97524 20.2646C3.48995 19.9462 3.07328 19.5371 2.74902 19.0607C2.53746 18.7498 2.38566 18.4045 2.27673 18"
-                                stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path>
-                            <path d="M19 10H18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path>
-                        </g>
-                    </svg>
+                <button disabled={screenPending} className="mt-2 rounded-md bg-slate-800 p-2 text-white screen"
+                        onClick={handleScreenshot}>
+                    {screenPending ? (
+                        <span className="loader"></span>
+                    ) : (
+                        <svg viewBox="0 0 24 24" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                            <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <circle cx="12" cy="13" r="3" stroke="currentColor" strokeWidth="1.5"></circle>
+                                <path
+                                    d="M2 13.3636C2 10.2994 2 8.76721 2.74902 7.6666C3.07328 7.19014 3.48995 6.78104 3.97524 6.46268C4.69555 5.99013 5.59733 5.82123 6.978 5.76086C7.63685 5.76086 8.20412 5.27068 8.33333 4.63636C8.52715 3.68489 9.37805 3 10.3663 3H13.6337C14.6219 3 15.4728 3.68489 15.6667 4.63636C15.7959 5.27068 16.3631 5.76086 17.022 5.76086C18.4027 5.82123 19.3044 5.99013 20.0248 6.46268C20.51 6.78104 20.9267 7.19014 21.251 7.6666C22 8.76721 22 10.2994 22 13.3636C22 16.4279 22 17.9601 21.251 19.0607C20.9267 19.5371 20.51 19.9462 20.0248 20.2646C18.9038 21 17.3433 21 14.2222 21H9.77778C6.65675 21 5.09624 21 3.97524 20.2646C3.48995 19.9462 3.07328 19.5371 2.74902 19.0607C2.53746 18.7498 2.38566 18.4045 2.27673 18"
+                                    stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path>
+                                <path d="M19 10H18" stroke="currentColor" strokeWidth="1.5"
+                                      strokeLinecap="round"></path>
+                            </g>
+                        </svg>
+                    )}
                 </button>
             </div>
         </div>

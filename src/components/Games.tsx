@@ -10,6 +10,7 @@ export const Games: FC = () => {
     const [games, setGames] = useState<GameData[] | null>(null);
     const [currentGameIndex, setCurrentGameIndex] = useState<number>(0);
     const [isGameFinished, setIsGameFinished] = useState<boolean>(false);
+    const game = games ? games[currentGameIndex] : undefined;
 
     useEffect(() => {
         fetch(`/json/${dirName}/games.json`)
@@ -17,11 +18,13 @@ export const Games: FC = () => {
             .then(setGames);
     }, []);
 
-    useEffect(() => {
-        if (!games || currentGameIndex === games.length - 1) return;
-        setCurrentGameIndex((t) => Math.min(t+1, games?.length - 1));
-        setIsGameFinished(false);
-    }, [isGameFinished]);
+    const handleNextGame = () => {
+        if (!games) return;
+        if (currentGameIndex < games.length - 1) {
+            setCurrentGameIndex((t) => t + 1);
+            setIsGameFinished(false);
+        }
+    };
 
     if (!games) {
         return (
@@ -31,5 +34,19 @@ export const Games: FC = () => {
         );
     }
 
-    return (<Board gameData={games[currentGameIndex]} setIsGameFinished={setIsGameFinished}/>);
-}
+    return (
+        <div className="relative">
+            <Board key={currentGameIndex} gameData={game} setIsGameFinished={setIsGameFinished} chatId={params.get('chat_id')} />
+
+            {isGameFinished && (
+                <div
+                    className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-white text-center z-50 cursor-pointer"
+                    onClick={handleNextGame}
+                >
+                    <div className="text-3xl font-bold mb-4">Игра завершена</div>
+                    <div className="text-lg">Нажмите в любом месте, чтобы перейти к следующей</div>
+                </div>
+            )}
+        </div>
+    );
+};
