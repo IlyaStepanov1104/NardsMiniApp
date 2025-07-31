@@ -32,7 +32,6 @@ export default function Board({gameData, setIsGameFinished, chatId}: IBoardProps
     const turn = data?.turns[currentTurn];
     const cubeCoords = turn ? getCubeCoords(turn.cube_location) : null;
     const [isAnimating, setIsAnimating] = useState(false);
-    console.log("%c 1 --> Line: 35||Board.tsx\n isAnimating: ","color:#f0f;", isAnimating);
 
     const handleScreenshot = async () => {
         if (!screenBlockRef.current) return;
@@ -158,7 +157,7 @@ export default function Board({gameData, setIsGameFinished, chatId}: IBoardProps
     }
 
     return (
-        <div className="w-full main p-2">
+        <div className="w-full main p-2 pt-8">
             <div ref={screenBlockRef} style={{backgroundColor: '#fff8e7'}}>
                 <div className="header">
                     <div className="header_item justify-start">
