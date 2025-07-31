@@ -45,11 +45,10 @@ export async function POST(req: NextRequest) {
 
         const buttons = [[{
             text: `Открыть игру 📲`,
-            web_app: {url: (`https://nards-mini-app-ohft.vercel.app?game=${dirName}&chat_id=${chat_id}`)!},
+            web_app: {url: (`https://nards.duckdns.org?game=${dirName}&chat_id=${chat_id}`)!},
         }]];
 
-        console.log("%c 1 --> Line: 52||route.ts\n `?game=${dirName}&chat_id=${chat_id}: ","color:#f0f;", `?game=${dirName}&chat_id=${chat_id}`);
-
+        console.log("%c 1 --> Line: 52||route.ts\n buttons[0][0].web_app.url: ", "color:#f0f;", buttons[0][0].web_app.url);
         await client.sendMessage({
                 chat_id,
                 text: 'Готово! Нажми кнопку ниже, чтобы открыть игру и просмотреть ходы.',
