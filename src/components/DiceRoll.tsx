@@ -9,6 +9,7 @@ type DiceRollProps = {
     size?: number
     duration?: number;
     notAnimated?: true;
+    className?: string;
 }
 
 const getRandomDice = () => Math.floor(Math.random() * 6) + 1 as 1 | 2 | 3 | 4 | 5 | 6
