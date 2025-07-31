@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
+nextjs-portal {
+    display: none;
+}
+
 html, body {
     background-color: #fff8e7;
     height: 100vh;
