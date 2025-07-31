@@ -14,7 +14,7 @@ type DiceRollProps = {
 
 const getRandomDice = () => Math.floor(Math.random() * 6) + 1 as 1 | 2 | 3 | 4 | 5 | 6
 
-export default function DiceRoll({dice, size = 64, duration = 0.2, notAnimated, className}: DiceRollProps) {
+export default function DiceRoll({dice, size = 64, notAnimated, className}: DiceRollProps) {
     const [rolling, setRolling] = useState(true)
     const [currentDice, setCurrentDice] = useState<[number, number]>([1, 1])
 
@@ -28,7 +28,7 @@ export default function DiceRoll({dice, size = 64, duration = 0.2, notAnimated, 
         const interval = setInterval(() => {
             setCurrentDice([getRandomDice(), getRandomDice()])
             frame++
-            if (frame > duration * 10) {
+            if (frame > 5) {
                 clearInterval(interval)
                 setCurrentDice(dice)
                 setRolling(false)
@@ -36,7 +36,7 @@ export default function DiceRoll({dice, size = 64, duration = 0.2, notAnimated, 
         }, 100)
 
         return () => clearInterval(interval)
-    }, [dice, duration])
+    }, [dice])
 
     return (
         <div className={`flex gap-4 items-center justify-center ${className}`}>

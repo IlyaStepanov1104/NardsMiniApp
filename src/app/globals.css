@@ -176,9 +176,25 @@ html, body {
 }
 
 .dice--first {
-    left: calc(28% - 50px);
+    right: calc(28% - 50px);
 }
 
 .dice--second {
-    right: calc(28% - 50px);
+    left: calc(28% - 50px);
+}
+
+button[disabled] {
+    cursor: not-allowed;
+    opacity: 0.6;
+    filter: brightness(0.6);
+}
+
+.menu-container {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    z-index: 100;
 }

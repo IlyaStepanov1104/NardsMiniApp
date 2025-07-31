@@ -10,6 +10,7 @@ export const Games: FC = () => {
     const [games, setGames] = useState<GameData[] | null>(null);
     const [currentGameIndex, setCurrentGameIndex] = useState<number>(0);
     const [isGameFinished, setIsGameFinished] = useState<boolean>(false);
+    const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
     const game = games ? games[currentGameIndex] : undefined;
 
     useEffect(() => {
@@ -36,7 +37,26 @@ export const Games: FC = () => {
 
     return (
         <div className="relative">
-            <Board key={currentGameIndex} gameData={game} setIsGameFinished={setIsGameFinished} chatId={params.get('chat_id')} />
+            <Board key={currentGameIndex} gameData={game} setIsGameFinished={setIsGameFinished}
+                   chatId={params.get('chat_id')}/>
+
+            <div className="menu-container">
+                {isMenuOpened ?
+                    <button
+                        onClick={() => setIsMenuOpened(false)}
+                        className="rounded-md border border-slate-300 py-1 px-2 text-center text-xs transition-all shadow-xs hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                    >
+                        Игра
+                    </button>
+                    :
+                    <button
+                        onClick={() => setIsMenuOpened(true)}
+                        className="rounded-md border border-slate-300 py-1 px-2 text-center text-xs transition-all shadow-xs hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                    >
+                        Меню
+                    </button>
+                }
+            </div>
 
             {isGameFinished && (
                 <div
@@ -48,12 +68,37 @@ export const Games: FC = () => {
                     <div className="text-lg">Нажмите в любом месте, чтобы перейти к следующей</div>
                 </div>
             )}
+            {isMenuOpened && (
+                <div
+                    className="absolute inset-0 opacity-90 z-50 cursor-pointer overflow-scroll pt-8"
+                    onClick={handleNextGame}
+                    style={{backgroundColor: '#fff8e7'}}
+                >
+                    <div className=" gap-4 flex flex-col justify-center items-center text-center">
+                        <div
+                            className="text-3xl font-bold mb-4"
+                        >Выберите игру:
+                        </div>
+                        {games.map((_, index) => (
+                            <button
+                                onClick={() => {
+                                    setCurrentGameIndex(index);
+                                    setIsMenuOpened(false);
+                                }}
+                                className="rounded-md bg-gradient-to-tr from-slate-800 to-slate-700 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                            >
+                                Игра {index + 1}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
 
 export const GamesClient = () => (
     <Suspense fallback={<div>Загрузка...</div>}>
-        <Games />
+        <Games/>
     </Suspense>
 )
