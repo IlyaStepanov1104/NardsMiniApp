@@ -248,6 +248,11 @@ export default function Board({gameData, setIsGameFinished, chatId}: IBoardProps
                 </div>
 
                 <div className="board">
+                    {turn && !turn.dice.includes(0) && (
+                        <DiceRoll dice={turn?.dice.length ? turn.dice : [0, 0]}
+                                  size={42} className={`dice dice--${turn.turn}`} key={turn.turn}/>
+                    )}
+
                     {turn?.action === 'double' && cubeCoords && (
                         <div
                             style={{
@@ -277,7 +282,7 @@ export default function Board({gameData, setIsGameFinished, chatId}: IBoardProps
 
                 <div className="turns">
                     <div
-                        className={`turns-info p-2 ${turn?.turn === 'first' && 'turns-info--active'}`}>
+                        className={`turns-info ${turn?.turn === 'first' && 'turns-info--active'}`}>
                         {turn?.turn === 'first' &&
                             turn.moves.map(({
                                                 from,
@@ -287,10 +292,8 @@ export default function Board({gameData, setIsGameFinished, chatId}: IBoardProps
                                 <span key={id}>{`${from}/${to}${captured ? '*' : ''}`}</span>
                             ))}
                     </div>
-                    <DiceRoll dice={turn?.dice.length ? turn.dice : [0, 0]}
-                              size={48}/>
                     <div
-                        className={`turns-info p-2 ${turn?.turn === 'second' && 'turns-info--active'}`}>
+                        className={`turns-info ${turn?.turn === 'second' && 'turns-info--active'}`}>
                         {turn?.turn === 'second' &&
                             turn.moves.map(({
                                                 from,

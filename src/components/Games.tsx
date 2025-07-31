@@ -40,8 +40,9 @@ export const Games: FC = () => {
 
             {isGameFinished && (
                 <div
-                    className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-white text-center z-50 cursor-pointer"
+                    className="absolute inset-0 opacity-60 flex flex-col justify-center items-center text-center z-50 cursor-pointer"
                     onClick={handleNextGame}
+                    style={{backgroundColor: '#fff8e7'}}
                 >
                     <div className="text-3xl font-bold mb-4">Игра завершена</div>
                     <div className="text-lg">Нажмите в любом месте, чтобы перейти к следующей</div>

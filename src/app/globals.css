@@ -127,7 +127,9 @@ html, body {
 
 .turns {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 6px;
 }
 
 .turns-info {
@@ -138,6 +140,10 @@ html, body {
     align-items: center;
     transition: opacity 0.3s ease-in-out 1s;
     opacity: 0;
+    font-size: 12px;
+    line-height: 16px;
+    height: 40px;
+    gap: 4px;
 }
 
 .turns-info--active {
@@ -158,4 +164,17 @@ html, body {
 
 .button[data-orientation="left"] {
     background-image: url('/left.png');
+}
+
+.dice {
+    position: absolute;
+    top: calc(50% - 21px);
+}
+
+.dice--first {
+    left: calc(28% - 50px);
+}
+
+.dice--second {
+    right: calc(28% - 50px);
 }

@@ -13,7 +13,7 @@ type DiceRollProps = {
 
 const getRandomDice = () => Math.floor(Math.random() * 6) + 1 as 1 | 2 | 3 | 4 | 5 | 6
 
-export default function DiceRoll({dice, size = 64, duration = 0.2, notAnimated}: DiceRollProps) {
+export default function DiceRoll({dice, size = 64, duration = 0.2, notAnimated, className}: DiceRollProps) {
     const [rolling, setRolling] = useState(true)
     const [currentDice, setCurrentDice] = useState<[number, number]>([1, 1])
 
@@ -38,7 +38,7 @@ export default function DiceRoll({dice, size = 64, duration = 0.2, notAnimated}:
     }, [dice, duration])
 
     return (
-        <div className="flex gap-4 items-center justify-center mt-4 mb-4">
+        <div className={`flex gap-4 items-center justify-center ${className}`}>
             {currentDice.map((num, idx) => (
                 <motion.div
                     key={idx}
