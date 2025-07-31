@@ -4,7 +4,7 @@ import {Checker} from "@/components/Checker";
 import DiceRoll from "@/components/DiceRoll";
 import {
     calculateCordY,
-    generateDefaultCheckersData,
+    generateDefaultCheckersData, getCubeCoords,
     getDirection,
     getRealPoint,
     sliceString,
@@ -12,7 +12,6 @@ import {
 } from "@/lib/helpers";
 import {BAR_COORDS, POINT_COORDS, ZERO_COORDS} from "@/lib/boardData";
 import {CheckerData, GameData, Player} from "@/components/types";
-import DiceFace from "@/components/DiceFace";
 
 
 interface IBoardProps {
@@ -21,18 +20,6 @@ interface IBoardProps {
     chatId: string | null;
 }
 
-function getCubeCoords(cubeLocation: 'center' | Player | null) {
-    if (cubeLocation === 'center') {
-        return {x: 'calc(50% - 16px)', y: 'calc(50% - 16px)'}; // пример координат центра доски
-    }
-    if (cubeLocation === 'first') {
-        return {x: '60%', y: '60%'}; // рядом с первым игроком
-    }
-    if (cubeLocation === 'second') {
-        return {x: '60%', y: '60%'}; // рядом со вторым игроком
-    }
-    return null;
-}
 
 export default function Board({gameData, setIsGameFinished, chatId}: IBoardProps) {
     const [data] = useState<GameData | undefined>(gameData);

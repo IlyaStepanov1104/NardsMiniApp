@@ -62,3 +62,16 @@ export const sliceString = (str: string): string => {
     if (str.length < 12) return str;
     return `${str.slice(0, 8)}...${str.slice(str.length - 2)}`;
 }
+
+export function getCubeCoords(cubeLocation: 'center' | Player | null) {
+    if (cubeLocation === 'center') {
+        return {x: 'calc(50% - 16px)', y: 'calc(50% - 16px)'}; // пример координат центра доски
+    }
+    if (cubeLocation === 'first') {
+        return {x: '60%', y: '60%'}; // рядом с первым игроком
+    }
+    if (cubeLocation === 'second') {
+        return {x: '60%', y: '60%'}; // рядом со вторым игроком
+    }
+    return null;
+}

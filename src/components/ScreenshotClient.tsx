@@ -1,13 +1,13 @@
 'use client';
 import {useEffect, useState, Suspense} from 'react';
 import {useSearchParams} from 'next/navigation';
-import {Checkerstate, PlayerInfo, Turn} from "@/components/types";
-import {sliceString} from "@/lib/helpers";
+import {CheckerData, PlayerInfo, Turn} from "@/components/types";
+import {getCubeCoords, sliceString} from "@/lib/helpers";
 import {Checker} from "@/components/Checker";
 import DiceRoll from "@/components/DiceRoll";
 
 interface state {
-    checkers: Checkerstate[];
+    checkers: CheckerData[];
     first: PlayerInfo;
     point_match: number;
     second: PlayerInfo;
@@ -18,6 +18,7 @@ export default function InnerScreenshotClient() {
     const searchParams = useSearchParams();
     const [state, setState] = useState<state | null>(null);
     const turn = state?.currentTurn;
+    const cubeCoords = turn ? getCubeCoords(turn.cube_location) : null;
 
     useEffect(() => {
         const stateParam = searchParams.get('state');
