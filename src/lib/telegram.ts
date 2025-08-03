@@ -17,10 +17,9 @@ interface TFile {
 
 export class TelegramBotAPI {
     private readonly baseUrl: string;
-    private readonly tkn = "8165148569:AAE1TuZjz7dGhR8arVLxL4rJ9bUwhuecOMo";
 
     constructor() {
-        this.baseUrl = `https://api.telegram.org/bot${this.tkn}`;
+        this.baseUrl = `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}`;
     }
 
     // Универсальный запрос к API
@@ -65,7 +64,7 @@ export class TelegramBotAPI {
 
     // Скачать файл по file_path
     async downloadFile(file_path: string) {
-        const fileUrl = `https://api.telegram.org/file/bot${this.tkn}/${file_path}`;
+        const fileUrl = `https://api.telegram.org/file/bot${process.env.TELEGRAM_BOT_TOKEN}/${file_path}`;
         const res = await fetch(fileUrl);
 
         if (!res.ok) {

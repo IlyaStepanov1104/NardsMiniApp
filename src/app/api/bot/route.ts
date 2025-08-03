@@ -7,6 +7,8 @@ import path from 'path'
 import {randomUUID} from 'crypto'
 import {TelegramBotAPI} from "@/lib/telegram";
 
+const miniAppUrl = process.env.MINI_APP_URL;
+
 export async function POST(req: NextRequest) {
     const update = await req.json()
     const chat_id = update.message.chat.id;
@@ -45,7 +47,7 @@ export async function POST(req: NextRequest) {
 
         const buttons = [[{
             text: `Открыть игру 📲`,
-            web_app: {url: (`https://nards.duckdns.org?game=${dirName}&chat_id=${chat_id}`)!},
+            web_app: {url: (`${miniAppUrl}?game=${dirName}&chat_id=${chat_id}`)!},
         }]];
 
         console.log("%c 1 --> Line: 52||route.ts\n buttons[0][0].web_app.url: ", "color:#f0f;", buttons[0][0].web_app.url);
