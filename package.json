@@ -9,11 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/lru-cache": "^7.10.10",
     "axios": "^1.11.0",
     "clsx": "^2.1.1",
     "form-data": "^4.0.4",
     "framer-motion": "^12.23.11",
     "html2canvas": "^1.4.1",
+    "lru-cache": "^11.2.2",
     "next": "15.4.4",
     "node-fetch": "^3.3.2",
     "puppeteer": "^24.15.0",

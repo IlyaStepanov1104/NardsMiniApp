@@ -199,11 +199,11 @@ export default function Board({gameData, setIsGameFinished, chatId}: IBoardProps
                                 </div>
                             )}
                         </div>
-                        <div className="score">{data.second.score}</div>
+                        <div className="score">{data.second?.score ?? 0}</div>
                     </div>
                     <div className="font-sans p-2 text-lg">:</div>
                     <div className="header_item justify-end">
-                        <div className="score">{data.first.score}</div>
+                        <div className="score">{data.first?.score ?? 0}</div>
                         <div className="checker checker--first">
                             {turn?.turn === 'first' && (turn.action === 'drop' ? (
                                 <svg fill="#E53935" viewBox="0 0 16 16"
@@ -238,9 +238,9 @@ export default function Board({gameData, setIsGameFinished, chatId}: IBoardProps
                             )}
                         </div>
                     </div>
-                    <div className="name text-left">{sliceString(data.second.name)}</div>
-                    <div className="text-center">Матч до {data.point_match}</div>
-                    <div className="name text-right">{sliceString(data.first.name)}</div>
+                    <div className="name text-left">{sliceString(data.second?.name ?? '')}</div>
+                    <div className="text-center">Матч до {data.point_match ?? 0}</div>
+                    <div className="name text-right">{sliceString(data.first?.name ?? '')}</div>
                 </div>
 
                 <div className="board">
